@@ -1,9 +1,13 @@
 'use client';
 
-import { motion } from 'framer-motion';
+import { motion, useInView } from 'framer-motion';
 import { CheckCircle2 } from 'lucide-react';
+import { useRef, useEffect } from 'react';
 
 const DeviceShowcase = () => {
+  const containerRef = useRef(null);
+  const isInView = useInView(containerRef, { amount: 0.3 });
+
   const features = [
     { title: 'Business Growth', desc: 'Scalable strategies for long-term success.' },
     { title: 'Revenue Focus', desc: 'Direct impact on your bottom line.' },
@@ -41,17 +45,26 @@ const DeviceShowcase = () => {
             ))}
           </div>
 
-          {/* Center Phone Mockup */}
-          <div className="w-full lg:w-1/3 relative flex justify-center order-1 lg:order-2 mb-8 lg:mb-0">
-             <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[300px] md:w-[400px] h-[300px] md:h-[400px] bg-blue/20 rounded-full blur-[80px] md:blur-[100px] animate-pulse-slow" />
+          {/* Center Video */}
+          <div ref={containerRef} className="w-full lg:w-1/3 relative flex justify-center order-1 lg:order-2 mb-8 lg:mb-0 px-4">
+             <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[300px] md:w-[500px] h-[200px] md:h-[300px] bg-blue/20 rounded-full blur-[80px] md:blur-[100px] animate-pulse-slow" />
              <motion.div
                initial={{ opacity: 0, scale: 0.8, y: 50 }}
                whileInView={{ opacity: 1, scale: 1, y: 0 }}
                viewport={{ once: true }}
-               className="relative z-10 w-[240px] md:w-[280px] h-[500px] md:h-[580px] bg-[#0b0b0b] rounded-[2.5rem] md:rounded-[3rem] border-8 border-gray-800 shadow-2xl overflow-hidden"
+               className="relative z-10 w-full max-w-[320px] md:max-w-[480px] aspect-video bg-[#0b0b0b] rounded-xl md:rounded-2xl shadow-2xl overflow-hidden border border-white/10 group"
              >
-                <div className="absolute top-0 left-1/2 -translate-x-1/2 w-24 md:w-32 h-5 md:h-6 bg-gray-800 rounded-b-2xl z-20" />
-                <div className="w-full h-full bg-[url('https://images.unsplash.com/photo-1551288049-bebda4e38f71?q=80&w=2070&auto=format&fit=crop')] bg-cover bg-center opacity-80" />
+                {isInView ? (
+                  <iframe 
+                    src="https://www.youtube.com/embed/K1GmGx-vQQI?autoplay=1&loop=1&playlist=K1GmGx-vQQI&controls=1&showinfo=0&rel=0" 
+                    className="w-full h-full border-none object-cover"
+                    allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" 
+                    title="Dashboard Preview"
+                    allowFullScreen
+                  ></iframe>
+                ) : (
+                  <div className="w-full h-full bg-[#0b0b0b]"></div>
+                )}
              </motion.div>
           </div>
 

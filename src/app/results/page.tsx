@@ -60,6 +60,34 @@ const ResultsPage = () => {
         </div>
       </section>
 
+      {/* Global Reach Marquee */}
+      <section className="py-12 bg-white/[0.02] border-b border-white/5 overflow-hidden">
+        <div className="container px-6 mb-12 text-center">
+           <h2 className="text-2xl md:text-4xl font-black text-white tracking-tighter uppercase">Our Global <span className="text-blue">Footprint</span></h2>
+        </div>
+        <div className="flex gap-16 md:gap-32 animate-scroll whitespace-nowrap items-center w-max">
+           {/* Loop twice for smooth infinite scrolling */}
+           {[...Array(2)].map((_, loopIdx) => (
+             <div key={loopIdx} className="flex gap-16 md:gap-32 items-center">
+               {[
+                 { name: 'USA', code: 'us' },
+                 { name: 'KSA', code: 'sa' },
+                 { name: 'UAE', code: 'ae' },
+                 { name: 'Kuwait', code: 'kw' },
+                 { name: 'Jordan', code: 'jo' },
+                 { name: 'Oman', code: 'om' },
+                 { name: 'Morocco', code: 'ma' },
+               ].map((country, i) => (
+                 <div key={`${loopIdx}-${i}`} className="flex items-center gap-4 transition-all cursor-default hover:scale-105">
+                    <img src={`https://flagcdn.com/${country.code}.svg`} alt={`${country.name} Flag`} className="h-8 md:h-10 w-auto rounded-sm border border-white/10 shadow-[0_0_15px_rgba(255,255,255,0.1)] transition-transform" />
+                    <span className="text-white font-black uppercase tracking-[0.2em] text-sm md:text-base">{country.name}</span>
+                 </div>
+               ))}
+             </div>
+           ))}
+        </div>
+      </section>
+
       {/* Results Grid */}
       <section className="py-24">
         <div className="container px-6">
@@ -107,16 +135,92 @@ const ResultsPage = () => {
         </div>
       </section>
 
+      {/* Client Logos Marquee */}
+      <section className="py-24 bg-dark-navy border-b border-white/5 overflow-hidden">
+        <div className="container px-6 mb-12 text-center">
+           <h2 className="text-2xl md:text-4xl font-black text-white tracking-tighter uppercase">Trusted by <span className="text-blue">100+ Brands</span></h2>
+        </div>
+        <div className="flex gap-12 animate-scroll whitespace-nowrap items-center w-max" style={{ animationDuration: '80s' }}>
+           {[...Array(2)].map((_, loopIdx) => (
+             <div key={loopIdx} className="flex gap-12 items-center">
+               {[
+                 'https://bmark.agency/wp-content/uploads/2025/03/قصر-النشلامي.jpg',
+                 'https://bmark.agency/wp-content/uploads/2025/03/سرداح.jpg',
+                 'https://bmark.agency/wp-content/uploads/2025/03/بلاي-ميكر.jpg',
+                 'https://bmark.agency/wp-content/uploads/2025/03/باريس-1.jpg',
+                 'https://bmark.agency/wp-content/uploads/2025/03/اورانج.jpg',
+                 'https://bmark.agency/wp-content/uploads/2025/03/العطاونة.jpg',
+                 'https://bmark.agency/wp-content/uploads/2025/03/اقران.jpg',
+                 'https://bmark.agency/wp-content/uploads/2025/03/عدنان.jpg',
+                 'https://bmark.agency/wp-content/uploads/2025/03/صيدلية.jpg',
+                 'https://bmark.agency/wp-content/uploads/2025/03/سيف.jpg',
+                 'https://bmark.agency/wp-content/uploads/2025/03/سما.jpg',
+                 'https://bmark.agency/wp-content/uploads/2025/03/سدر-وفخارة.jpg',
+                 'https://bmark.agency/wp-content/uploads/2025/03/س.jpg',
+                 'https://bmark.agency/wp-content/uploads/2025/03/ديار-للعقار.jpg',
+                 'https://bmark.agency/wp-content/uploads/2025/03/دكتور.jpg',
+                 'https://bmark.agency/wp-content/uploads/2025/03/حبيبيز.jpg',
+                 'https://bmark.agency/wp-content/uploads/2025/03/جول.jpg',
+                 'https://bmark.agency/wp-content/uploads/2025/03/جدزدنا.jpg',
+                 'https://bmark.agency/wp-content/uploads/2025/03/تادهل.jpg',
+                 'https://bmark.agency/wp-content/uploads/2025/03/بيف-في-رغيف.jpg',
+                 'https://bmark.agency/wp-content/uploads/2025/03/بريتش.jpg',
+                 'https://bmark.agency/wp-content/uploads/2025/03/براكتيكا.jpg',
+                 'https://bmark.agency/wp-content/uploads/2025/03/براكتا.jpg',
+                 'https://bmark.agency/wp-content/uploads/2025/03/باريس.jpg',
+                 'https://bmark.agency/wp-content/uploads/2025/03/الموند.jpg',
+                 'https://bmark.agency/wp-content/uploads/2025/03/البيت-التركي.jpg',
+                 'https://bmark.agency/wp-content/uploads/2025/03/الامير-سرداح.jpg',
+                 'https://bmark.agency/wp-content/uploads/2025/03/الامبراطور.jpg',
+                 'https://bmark.agency/wp-content/uploads/2025/03/الاقصى.jpg',
+                 'https://bmark.agency/wp-content/uploads/2025/03/اركان.jpg',
+                 'https://bmark.agency/wp-content/uploads/2025/03/TERBO.jpg',
+                 'https://bmark.agency/wp-content/uploads/2025/03/RISE.jpg',
+                 'https://bmark.agency/wp-content/uploads/2025/03/RFHK.jpg',
+                 'https://bmark.agency/wp-content/uploads/2025/03/NEW.jpg',
+                 'https://bmark.agency/wp-content/uploads/2025/03/MM.jpg',
+                 'https://bmark.agency/wp-content/uploads/2025/03/LAVAL.jpg',
+                 'https://bmark.agency/wp-content/uploads/2025/03/JTA.jpg',
+                 'https://bmark.agency/wp-content/uploads/2025/03/JET.jpg',
+                 'https://bmark.agency/wp-content/uploads/2025/03/IP.jpg',
+                 'https://bmark.agency/wp-content/uploads/2025/03/HOME.jpg',
+                 'https://bmark.agency/wp-content/uploads/2025/03/HKG-JV.jpg',
+                 'https://bmark.agency/wp-content/uploads/2025/03/GW.jpg',
+                 'https://bmark.agency/wp-content/uploads/2025/03/GP.jpg',
+                 'https://bmark.agency/wp-content/uploads/2025/03/EAF.jpg',
+                 'https://bmark.agency/wp-content/uploads/2025/03/DECORE.jpg',
+                 'https://bmark.agency/wp-content/uploads/2025/03/CORE.jpg',
+                 'https://bmark.agency/wp-content/uploads/2025/03/BMC.jpg',
+                 'https://bmark.agency/wp-content/uploads/2025/03/ati.jpg',
+                 'https://bmark.agency/wp-content/uploads/2025/03/1-first.jpg',
+                 'https://bmark.agency/wp-content/uploads/2025/03/VL-2.jpg',
+                 'https://bmark.agency/wp-content/uploads/2025/03/GDHFHHG.jpg',
+                 'https://bmark.agency/wp-content/uploads/2025/03/TRDGF-1.jpg',
+                 'https://bmark.agency/wp-content/uploads/2025/03/موتو.jpg',
+                 'https://bmark.agency/wp-content/uploads/2025/03/محمود-المصري.jpg',
+                 'https://bmark.agency/wp-content/uploads/2025/03/ليما.jpg',
+                 'https://bmark.agency/wp-content/uploads/2025/03/لوكا.jpg',
+                 'https://bmark.agency/wp-content/uploads/2025/03/كرم.jpg'
+               ].map((src, i) => (
+                 <div key={`${loopIdx}-${i}`} className="w-24 md:w-32 h-24 md:h-32 flex-shrink-0 bg-white rounded-2xl flex items-center justify-center p-2 opacity-50 grayscale hover:grayscale-0 hover:opacity-100 transition-all shadow-[0_0_15px_rgba(255,255,255,0.05)] border border-white/10">
+                    <img src={src} alt="Client Logo" className="w-full h-full object-contain mix-blend-multiply" />
+                 </div>
+               ))}
+             </div>
+           ))}
+        </div>
+      </section>
+
       {/* Video Testimonials Section */}
       <section className="py-24 md:py-32 bg-white/[0.02] border-y border-white/5">
         <div className="container px-6 mb-20 text-center">
            <span className="text-blue font-black uppercase tracking-[0.3em] text-[10px] mb-4 block">Wall of Proof</span>
            <h2 className="text-4xl md:text-7xl font-black text-white tracking-tighter uppercase">Direct <span className="text-blue">Feedback</span></h2>
         </div>
-        <div className="flex gap-8 px-6 overflow-x-auto pb-12 no-scrollbar scroll-smooth">
+        <div className="flex gap-8 px-6 overflow-x-auto pb-12 no-scrollbar scroll-smooth items-stretch md:justify-center">
            {testimonials.map((t, i) => (
-             <div key={i} className="flex-shrink-0 w-[320px] md:w-[450px] bg-dark-navy rounded-[2.5rem] border border-white/5 overflow-hidden shadow-2xl">
-                <div className="aspect-video relative group cursor-pointer">
+             <div key={i} className="flex-shrink-0 w-[320px] md:w-[450px] bg-dark-navy rounded-[2.5rem] border border-white/5 overflow-hidden shadow-2xl flex flex-col">
+                <div className="aspect-video relative group cursor-pointer flex-shrink-0">
                    <div 
                       className="absolute inset-0 bg-cover bg-center grayscale group-hover:grayscale-0 transition-all duration-700"
                       style={{ backgroundImage: `url(${t.video})` }}
@@ -128,9 +232,9 @@ const ResultsPage = () => {
                       </div>
                    </div>
                 </div>
-                <div className="p-8 md:p-10">
+                <div className="p-8 md:p-10 flex flex-col flex-grow">
                    <p className="text-gray-400 text-lg font-medium leading-relaxed mb-8 italic">"{t.text}"</p>
-                   <div>
+                   <div className="mt-auto">
                       <h4 className="text-white font-black uppercase tracking-tighter text-xl">{t.name}</h4>
                       <p className="text-blue font-black uppercase text-[10px] tracking-widest mt-1">{t.company}</p>
                    </div>
@@ -142,21 +246,39 @@ const ResultsPage = () => {
 
       {/* Dashboard Gallery */}
       <section className="py-24 md:py-32 overflow-hidden">
-         <div className="container px-6 mb-16 text-center md:text-left">
+         <div className="container px-6 mb-16 text-center">
             <h2 className="text-3xl md:text-6xl font-black text-white tracking-tighter uppercase">Live <span className="text-blue">Execution</span> Dashboards</h2>
          </div>
          <div className="flex gap-8 animate-scroll whitespace-nowrap">
-            {[1, 2, 3, 4, 5, 6].map((i) => (
-              <div key={i} className="w-[300px] md:w-[600px] h-[200px] md:h-[400px] bg-[#0b0b0b] rounded-[2.5rem] border border-white/10 flex-shrink-0 flex items-center justify-center overflow-hidden relative group">
-                 <div className="absolute inset-0 bg-[url('https://images.unsplash.com/photo-1551288049-bebda4e38f71?q=80&w=2070&auto=format&fit=crop')] bg-cover bg-center opacity-20 grayscale group-hover:opacity-40 transition-opacity" />
-                 <span className="relative z-10 text-white/5 font-black text-5xl md:text-8xl italic tracking-tighter">DATA_OVERVIEW_0{i}</span>
+            {[
+              '/1-G-ads.webp',
+              '/2-G-ads.webp',
+              '/3-G-ads.webp',
+              '/4-G-ads.webp',
+              '/5-G-ads.webp',
+              '/6-G-ads.webp'
+            ].map((src, i) => (
+              <div key={i} className="w-[300px] md:w-[600px] h-[200px] md:h-[400px] bg-[#0b0b0b] rounded-[2.5rem] border border-white/10 flex-shrink-0 flex items-center justify-center overflow-hidden relative group cursor-pointer">
+                 <div 
+                   className="absolute inset-0 bg-cover bg-center opacity-50 grayscale group-hover:opacity-100 group-hover:grayscale-0 transition-all duration-500" 
+                   style={{ backgroundImage: `url(${src})` }}
+                 />
               </div>
             ))}
             {/* Repeat for Infinite Loop */}
-            {[1, 2, 3, 4, 5, 6].map((i) => (
-              <div key={`dup-${i}`} className="w-[300px] md:w-[600px] h-[200px] md:h-[400px] bg-[#0b0b0b] rounded-[2.5rem] border border-white/10 flex-shrink-0 flex items-center justify-center overflow-hidden relative group">
-                 <div className="absolute inset-0 bg-[url('https://images.unsplash.com/photo-1551288049-bebda4e38f71?q=80&w=2070&auto=format&fit=crop')] bg-cover bg-center opacity-20 grayscale group-hover:opacity-40 transition-opacity" />
-                 <span className="relative z-10 text-white/5 font-black text-5xl md:text-8xl italic tracking-tighter">DATA_OVERVIEW_0{i}</span>
+            {[
+              '/1-G-ads.webp',
+              '/2-G-ads.webp',
+              '/3-G-ads.webp',
+              '/4-G-ads.webp',
+              '/5-G-ads.webp',
+              '/6-G-ads.webp'
+            ].map((src, i) => (
+              <div key={`dup-${i}`} className="w-[300px] md:w-[600px] h-[200px] md:h-[400px] bg-[#0b0b0b] rounded-[2.5rem] border border-white/10 flex-shrink-0 flex items-center justify-center overflow-hidden relative group cursor-pointer">
+                 <div 
+                   className="absolute inset-0 bg-cover bg-center opacity-50 grayscale group-hover:opacity-100 group-hover:grayscale-0 transition-all duration-500" 
+                   style={{ backgroundImage: `url(${src})` }}
+                 />
               </div>
             ))}
          </div>

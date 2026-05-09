@@ -47,7 +47,7 @@ const TeamAuthority = () => {
                 viewport={{ once: true }}
                 className="aspect-square rounded-3xl overflow-hidden shadow-2xl border-4 border-white/5 relative"
               >
-                <div className="absolute inset-0 bg-[url('https://images.unsplash.com/photo-1522071820081-009f0129c71c?q=80&w=2070&auto=format&fit=crop')] bg-cover bg-center grayscale" />
+                <div className="absolute inset-0 bg-[url('/team-results-1.jpeg')] bg-cover bg-center grayscale" />
               </motion.div>
               <motion.div
                 initial={{ opacity: 0, scale: 0.9 }}
@@ -56,7 +56,7 @@ const TeamAuthority = () => {
                 transition={{ delay: 0.1 }}
                 className="aspect-square rounded-3xl overflow-hidden shadow-2xl border-4 border-white/5 relative"
               >
-                <div className="absolute inset-0 bg-[url('https://images.unsplash.com/photo-1542744173-8e7e53415bb0?q=80&w=2070&auto=format&fit=crop')] bg-cover bg-center grayscale" />
+                <div className="absolute inset-0 bg-[url('/team-results-2.jpeg')] bg-cover bg-center grayscale" />
               </motion.div>
               <motion.div
                 initial={{ opacity: 0, scale: 0.9 }}
@@ -65,7 +65,7 @@ const TeamAuthority = () => {
                 transition={{ delay: 0.2 }}
                 className="aspect-square rounded-3xl overflow-hidden shadow-2xl border-4 border-white/5 relative"
               >
-                <div className="absolute inset-0 bg-[url('https://images.unsplash.com/photo-1552664730-d307ca884978?q=80&w=2070&auto=format&fit=crop')] bg-cover bg-center grayscale" />
+                <div className="absolute inset-0 bg-[url('/team-results-3.jpeg')] bg-cover bg-center grayscale" />
               </motion.div>
               <motion.div
                 initial={{ opacity: 0, scale: 0.9 }}
@@ -74,7 +74,7 @@ const TeamAuthority = () => {
                 transition={{ delay: 0.3 }}
                 className="aspect-square rounded-3xl overflow-hidden shadow-2xl border-4 border-white/5 relative"
               >
-                <div className="absolute inset-0 bg-[url('https://images.unsplash.com/photo-1600880212340-053459a139ad?q=80&w=2070&auto=format&fit=crop')] bg-cover bg-center grayscale" />
+                <div className="absolute inset-0 bg-[url('/team-results-4.jpeg')] bg-cover bg-center grayscale" />
               </motion.div>
             </div>
           </div>

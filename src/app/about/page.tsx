@@ -40,18 +40,14 @@ const AboutPage = () => {
         <div className="container px-6">
           <div className="flex flex-col lg:flex-row gap-20 items-center">
             <div className="lg:w-1/2 w-full">
-              <div className="aspect-[4/5] bg-[#0b0b0b] rounded-[2.5rem] overflow-hidden relative shadow-2xl border-4 border-white/5">
-                <div className="absolute inset-0 bg-[url('https://images.unsplash.com/photo-1560250097-0b93528c311a?q=80&w=1974&auto=format&fit=crop')] bg-cover bg-center grayscale" />
-                <div className="absolute inset-0 bg-navy/40" />
-                <div className="absolute inset-0 flex items-center justify-center">
-                   <Link href="/book" className="w-24 h-24 bg-blue rounded-full flex items-center justify-center cursor-pointer hover:scale-110 transition-transform shadow-[0_0_30px_rgba(0,158,219,0.6)]">
-                      <div className="w-0 h-0 border-t-[12px] border-t-transparent border-l-[20px] border-l-white border-b-[12px] border-b-transparent ml-2" />
-                   </Link>
-                </div>
-                <div className="absolute bottom-10 left-10 text-white">
-                   <div className="text-[10px] font-black uppercase tracking-[0.3em] mb-2 text-blue">Founder Message</div>
-                   <div className="text-2xl md:text-3xl font-black tracking-tighter uppercase leading-tight">Growth is an <br /> Execution Problem.</div>
-                </div>
+              <div className="w-full aspect-video md:aspect-[4/5] bg-[#0b0b0b] rounded-[2.5rem] overflow-hidden relative shadow-2xl border-4 border-white/5">
+                <iframe 
+                  src="https://www.youtube.com/embed/IYIh4GJLfAo?rel=0&modestbranding=1" 
+                  className="w-full h-full border-none"
+                  allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" 
+                  title="Founder Message"
+                  allowFullScreen
+                ></iframe>
               </div>
             </div>
             <div className="lg:w-1/2">
@@ -106,15 +102,20 @@ const AboutPage = () => {
 
       {/* Culture Section */}
       <section className="py-24 overflow-hidden">
-         <div className="container px-6 mb-16">
+         <div className="container px-6 text-center mb-16">
             <h2 className="text-3xl md:text-5xl font-black text-white tracking-tighter uppercase">Behind <span className="text-blue">The Scenes</span></h2>
          </div>
-         <div className="flex gap-6 px-6 overflow-x-auto pb-12 no-scrollbar">
-            {[1, 2, 3, 4, 5].map((i) => (
-              <div key={i} className="flex-shrink-0 w-[300px] md:w-[450px] h-[250px] md:h-[350px] rounded-[2rem] overflow-hidden shadow-2xl relative border-2 border-white/5">
-                 <div className="absolute inset-0 bg-[url('https://images.unsplash.com/photo-1522202176988-66273c2fd55f?q=80&w=2071&auto=format&fit=crop')] bg-cover bg-center opacity-60 grayscale hover:grayscale-0 hover:opacity-100 transition-all duration-700" />
-              </div>
-            ))}
+         <div className="container px-6">
+            <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
+              {['/team-results-1.jpeg', '/team-results-2.jpeg', '/team-results-3.jpeg', '/team-results-4.jpeg'].map((imgSrc, i) => (
+                <div key={i} className="w-full h-[250px] md:h-[300px] lg:h-[350px] rounded-[2rem] overflow-hidden shadow-2xl relative border-2 border-white/5 group">
+                   <div 
+                     className="absolute inset-0 bg-cover bg-center opacity-60 grayscale group-hover:grayscale-0 group-hover:opacity-100 transition-all duration-700"
+                     style={{ backgroundImage: `url(${imgSrc})` }}
+                   />
+                </div>
+              ))}
+            </div>
          </div>
       </section>
 
