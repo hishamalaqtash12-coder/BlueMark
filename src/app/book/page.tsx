@@ -2,11 +2,26 @@
 
 import { motion } from 'framer-motion';
 import { MessageCircle, Send, CheckCircle2 } from 'lucide-react';
-import { useState } from 'react';
+import { useState, useEffect } from 'react';
 
 const BookingPage = () => {
   const [isSubmitted, setIsSubmitted] = useState(false);
   const [isSubmitting, setIsSubmitting] = useState(false);
+
+  useEffect(() => {
+    if (isSubmitted) {
+      const script = document.createElement('script');
+      script.src = 'https://assets.calendly.com/assets/external/widget.js';
+      script.async = true;
+      document.body.appendChild(script);
+
+      return () => {
+        if (document.body.contains(script)) {
+          document.body.removeChild(script);
+        }
+      };
+    }
+  }, [isSubmitted]);
 
   const handleWhatsApp = () => {
     const message = encodeURIComponent("Hello Blue Mark Team, I'm interested in booking a strategy call for my business growth.");
@@ -29,7 +44,8 @@ const BookingPage = () => {
       });
 
       if (response.ok) {
-        setIsSubmitted(true);
+        // Redirect to calendar booking page
+        router.push('/book/schedule');
       } else {
         alert("Something went wrong. Please try again or use WhatsApp.");
       }
@@ -141,17 +157,11 @@ const BookingPage = () => {
                 </form>
               </div>
             ) : (
-              <div className="relative z-10 h-full flex flex-col items-center justify-center text-center py-20">
-                 <div className="w-20 h-20 bg-blue/20 rounded-full flex items-center justify-center mb-8">
-                    <CheckCircle2 className="w-10 h-10 text-blue" />
-                 </div>
-                 <h3 className="text-3xl font-black text-white uppercase tracking-tighter mb-4">Application Received</h3>
-                 <p className="text-gray-400 max-w-md mx-auto leading-relaxed">
-                   Thank you for your interest. We have received your business details and will get back to you within 24 hours.
-                 </p>
+              <div className="relative z-10 w-full h-full min-h-[700px] flex flex-col justify-center">
+                 <div className="calendly-inline-widget w-full rounded-2xl overflow-hidden" data-url="https://calendly.com/motasem-mahmoud-odeh/30min?hide_event_type_details=1&hide_gdpr_banner=1&background_color=0f172a&text_color=ffffff&primary_color=009EDB" style={{ minWidth: '320px', height: '700px' }}></div>
                  <button 
                     onClick={() => setIsSubmitted(false)}
-                    className="mt-10 text-blue font-black uppercase text-xs tracking-widest border-b border-blue"
+                    className="mt-6 mx-auto text-gray-400 font-bold uppercase text-[10px] tracking-widest hover:text-white transition-colors"
                  >
                    Back to Form
                  </button>
