@@ -7,28 +7,22 @@ import { Play } from 'lucide-react';
 
 const results = [
   {
-    growth: '+400% Sales Growth',
-    market: 'California',
-    services: 'Lead Generation • Paid Ads',
-    image: 'https://images.unsplash.com/photo-1460925895917-afdab827c52f?q=80&w=2026&auto=format&fit=crop'
+    growth: '10,000+ Qualified Leads',
+    market: 'Multi-market',
+    services: 'Lead Generation',
+    image: '/results-10,000+ Qualified Leads.jpg'
+  },
+  {
+    growth: '5.9X ROAS for E-com',
+    market: 'USA',
+    services: 'Paid Ads • Content Strategy',
+    image: '/results-5.9X ROAS for E-com.jpg'
   },
   {
     growth: '9X ROAS Campaign',
     market: 'UAE',
     services: 'Ads Management • Funnel Optimization',
-    image: 'https://images.unsplash.com/photo-1551288049-bebda4e38f71?q=80&w=2070&auto=format&fit=crop'
-  },
-  {
-    growth: '10,000+ Qualified Leads',
-    market: 'Multi-market',
-    services: 'Lead Generation',
-    image: 'https://images.unsplash.com/photo-1543286386-713bdd548da4?q=80&w=2070&auto=format&fit=crop'
-  },
-  {
-    growth: '6.5X ROAS for E-com',
-    market: 'USA',
-    services: 'Paid Ads • Content Strategy',
-    image: 'https://images.unsplash.com/photo-1535320903710-d993d3d77d29?q=80&w=2070&auto=format&fit=crop'
+    image: '/results-9X ROAS Campaign.jpg'
   }
 ];
 
@@ -91,7 +85,7 @@ const ResultsPage = () => {
       {/* Results Grid */}
       <section className="py-24">
         <div className="container px-6">
-          <div className="grid grid-cols-1 md:grid-cols-2 gap-8 md:gap-12">
+          <div className="grid grid-cols-1 md:grid-cols-3 gap-8 md:gap-12">
             {results.map((result, index) => (
               <motion.div
                 key={index}
@@ -99,12 +93,12 @@ const ResultsPage = () => {
                 whileInView={{ opacity: 1, y: 0 }}
                 viewport={{ once: true }}
                 transition={{ delay: index * 0.1 }}
-                className="group relative overflow-hidden rounded-[2.5rem] bg-white/[0.02] border border-white/5 flex flex-col"
+                className="group relative overflow-hidden rounded-[2.5rem] bg-white/[0.02] border border-white/5 flex flex-col h-full"
               >
-                <div className="aspect-[16/9] overflow-hidden relative">
+                <div className="aspect-[16/9] overflow-hidden relative shrink-0">
                   <div 
                     className="absolute inset-0 bg-cover bg-center transition-transform duration-700 group-hover:scale-110 grayscale group-hover:grayscale-0"
-                    style={{ backgroundImage: `url(${result.image})` }}
+                    style={{ backgroundImage: `url("${result.image}")` }}
                   />
                   <div className="absolute inset-0 bg-navy/60 group-hover:bg-navy/20 transition-colors" />
                   <div className="absolute top-6 right-6 z-20">
@@ -114,17 +108,17 @@ const ResultsPage = () => {
                   </div>
                 </div>
                 
-                <div className="p-10 md:p-14">
-                  <h3 className="text-4xl md:text-6xl font-black text-white mb-6 tracking-tighter uppercase leading-[0.9]">
+                <div className="p-8 md:p-12 flex flex-col flex-grow">
+                  <h3 className="text-4xl md:text-5xl font-black text-white mb-6 tracking-tighter uppercase leading-[0.9]">
                     {result.growth}
                   </h3>
-                  <div className="flex flex-col gap-3 mb-12">
+                  <div className="flex flex-col gap-3 mb-10">
                     <span className="text-blue font-black uppercase text-xs tracking-[0.3em]">{result.market}</span>
                     <span className="text-gray-500 font-bold uppercase text-[10px] tracking-[0.2em]">{result.services}</span>
                   </div>
                   <Link 
                     href="/book"
-                    className="group/btn inline-flex items-center gap-3 text-white font-black uppercase tracking-widest text-[10px] bg-white/5 px-6 py-3 rounded-full hover:bg-blue transition-all"
+                    className="group/btn inline-flex items-center gap-3 text-white font-black uppercase tracking-widest text-[10px] bg-white/5 px-6 py-3 rounded-full hover:bg-blue transition-all mt-auto w-fit"
                   >
                     Duplicate This Success <Play size={12} className="fill-current" />
                   </Link>

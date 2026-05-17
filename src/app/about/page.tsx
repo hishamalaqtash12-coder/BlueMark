@@ -4,12 +4,19 @@ import { motion } from 'framer-motion';
 import Link from 'next/link';
 
 const teamMembers = [
-  { name: 'Marcus Blue', role: 'Founder & CEO', category: 'Leadership', image: 'https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?q=80&w=1974&auto=format&fit=crop' },
-  { name: 'Sarah J.', role: 'Head of Strategy', category: 'Strategy', image: 'https://images.unsplash.com/photo-1494790108377-be9c29b29330?q=80&w=1974&auto=format&fit=crop' },
-  { name: 'David K.', role: 'Performance Lead', category: 'Performance', image: 'https://images.unsplash.com/photo-1500648767791-00dcc994a43e?q=80&w=1974&auto=format&fit=crop' },
-  { name: 'Elena V.', role: 'Creative Director', category: 'Creative', image: 'https://images.unsplash.com/photo-1534528741775-53994a69daeb?q=80&w=1964&auto=format&fit=crop' },
-  { name: 'Michael T.', role: 'Technical Solutions', category: 'Development', image: 'https://images.unsplash.com/photo-1519085360753-af0119f7cbe7?q=80&w=1974&auto=format&fit=crop' },
-  { name: 'Sophia L.', role: 'Lead Optimizer', category: 'Strategy', image: 'https://images.unsplash.com/photo-1573496359142-b8d87734a5a2?q=80&w=1976&auto=format&fit=crop' },
+  { name: 'Hisham AlAqtash', role: 'Founder and CEO', image: '/ourteam/Hisham AlAqtash _ Founder and CEO .jpeg' },
+  { name: 'Natasha Jankhout', role: 'CEO Assistant', image: '/ourteam/Natasha Jankhout _ CEO Assistant.jpeg' },
+  { name: 'Noor Aldeen AlQaisi', role: 'Project Manager', image: '/ourteam/Noor Aldeen AlQaisi _ Project Manager .PNG' },
+  { name: 'Batool', role: 'Marketing Manager', image: '/ourteam/Batool _ Marketing Manager .jpeg' },
+  { name: 'Fatima Jibril', role: 'Account Manager', image: '/ourteam/Fatima Jibril _ Account Manager .jpeg' },
+  { name: 'Noor Hindi', role: 'Account Manager', image: '/ourteam/Noor Hindi _ Account Manager .jpeg' },
+  { name: 'Alaa AlAqtash', role: 'Media Buyer', image: '/ourteam/Alaa AlAqtash _ Media Buyer .jpeg' },
+  { name: 'Bassem Tolomedjian', role: 'AI Content Creator, Video editor', image: '/ourteam/Bassem Tolomedjian _ AI Content Creator, Video editor .png' },
+  { name: 'Omar Adel', role: 'Senior Graphic Designer & Video Editor', image: '/ourteam/Omar Adel_ Senior Graphic Designer & Video Editor.jpeg' },
+  { name: 'Ebrahim Fathi', role: 'Graphic Designer', image: '/ourteam/Ebrahim Fathi _ Graphic Designer .webp' },
+  { name: 'Omar Remah', role: 'Video Editor', image: '/ourteam/Omar Remah _ Video Editor .jpeg' },
+  { name: 'Shadi Adel', role: 'Video Editor', image: '/ourteam/Shadi Adel_ Video Editor.jpeg' },
+  { name: 'Motasem Odeh', role: 'Web Developer', image: '/ourteam/Motasem Odeh - Web Developer.jpg' }
 ];
 
 const AboutPage = () => {
@@ -88,7 +95,7 @@ const AboutPage = () => {
                 <div className="aspect-square rounded-[2rem] overflow-hidden mb-8 relative grayscale group-hover:grayscale-0 transition-all duration-700 border-4 border-white/5 shadow-2xl">
                   <div 
                     className="absolute inset-0 bg-cover bg-center transition-transform duration-700 group-hover:scale-110"
-                    style={{ backgroundImage: `url(${member.image})` }}
+                    style={{ backgroundImage: `url("${member.image}")` }}
                   />
                   <div className="absolute inset-0 bg-navy/20 group-hover:bg-transparent transition-colors" />
                 </div>
