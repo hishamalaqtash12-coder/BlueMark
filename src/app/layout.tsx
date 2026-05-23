@@ -17,6 +17,9 @@ const fontHeading = Plus_Jakarta_Sans({
 export const metadata: Metadata = {
   title: "Blue Mark | Growth Solutions Built to Drive Sales",
   description: "We help businesses generate qualified leads, increase revenue, and scale through performance marketing, content, websites, and automation.",
+  icons: {
+    icon: "/Blue-Mark-favicon.webp",
+  },
 };
 
 export default function RootLayout({

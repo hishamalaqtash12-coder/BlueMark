@@ -205,7 +205,7 @@ const ResultsPage = () => {
         </div>
       </section>
 
-      {/* Video Testimonials Section */}
+      {/* Video Testimonials Section (Hidden for now)
       <section className="py-24 md:py-32 bg-white/[0.02] border-y border-white/5">
         <div className="container px-6 mb-20 text-center">
            <span className="text-blue font-black uppercase tracking-[0.3em] text-[10px] mb-4 block">Wall of Proof</span>
@@ -237,6 +237,7 @@ const ResultsPage = () => {
            ))}
         </div>
       </section>
+      */}
 
       {/* Dashboard Gallery */}
       <section className="py-24 md:py-32 overflow-hidden">

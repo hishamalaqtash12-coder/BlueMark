@@ -1,15 +1,16 @@
 'use client';
 
-import { motion } from 'framer-motion';
+import { useRef, useEffect } from 'react';
+import { motion, useInView } from 'framer-motion';
 import Link from 'next/link';
 
 const teamMembers = [
   { name: 'Hisham AlAqtash', role: 'Founder and CEO', image: '/ourteam/Hisham AlAqtash _ Founder and CEO .jpeg' },
+  { name: 'Batool', role: 'Marketing Manager', image: '/ourteam/Batool _ Marketing Manager .jpeg' },
   { name: 'Natasha Jankhout', role: 'CEO Assistant', image: '/ourteam/Natasha Jankhout _ CEO Assistant.jpeg' },
   { name: 'Noor Aldeen AlQaisi', role: 'Project Manager', image: '/ourteam/Noor Aldeen AlQaisi _ Project Manager .PNG' },
-  { name: 'Batool', role: 'Marketing Manager', image: '/ourteam/Batool _ Marketing Manager .jpeg' },
-  { name: 'Fatima Jibril', role: 'Account Manager', image: '/ourteam/Fatima Jibril _ Account Manager .jpeg' },
   { name: 'Noor Hindi', role: 'Account Manager', image: '/ourteam/Noor Hindi _ Account Manager .jpeg' },
+  { name: 'Fatima Jibril', role: 'Account Manager', image: '/ourteam/Fatima Jibril _ Account Manager .jpeg' },
   { name: 'Alaa AlAqtash', role: 'Media Buyer', image: '/ourteam/Alaa AlAqtash _ Media Buyer .jpeg' },
   { name: 'Bassem Tolomedjian', role: 'AI Content Creator, Video editor', image: '/ourteam/Bassem Tolomedjian _ AI Content Creator, Video editor .png' },
   { name: 'Omar Adel', role: 'Senior Graphic Designer & Video Editor', image: '/ourteam/Omar Adel_ Senior Graphic Designer & Video Editor.jpeg' },
@@ -20,6 +21,23 @@ const teamMembers = [
 ];
 
 const AboutPage = () => {
+  const videoRef = useRef<HTMLDivElement>(null);
+  const iframeRef = useRef<HTMLIFrameElement>(null);
+  const isVideoInView = useInView(videoRef, { margin: "-100px" });
+
+  useEffect(() => {
+    if (iframeRef.current && iframeRef.current.contentWindow) {
+      if (isVideoInView) {
+        iframeRef.current.contentWindow.postMessage(JSON.stringify({ event: 'command', func: 'playVideo' }), '*');
+        iframeRef.current.contentWindow.postMessage(JSON.stringify({ event: 'command', func: 'unMute' }), '*');
+      } else {
+        iframeRef.current.contentWindow.postMessage(JSON.stringify({ event: 'command', func: 'pauseVideo' }), '*');
+      }
+    }
+  }, [isVideoInView]);
+
+  const videoSrc = "https://www.youtube.com/embed/IYIh4GJLfAo?rel=0&modestbranding=1&enablejsapi=1";
+
   return (
     <div className="bg-dark-navy min-h-screen">
       {/* Hero Section */}
@@ -47,9 +65,10 @@ const AboutPage = () => {
         <div className="container px-6">
           <div className="flex flex-col lg:flex-row gap-20 items-center">
             <div className="lg:w-1/2 w-full">
-              <div className="w-full aspect-video md:aspect-[4/5] bg-[#0b0b0b] rounded-[2.5rem] overflow-hidden relative shadow-2xl border-4 border-white/5">
+              <div ref={videoRef} className="w-full aspect-video md:aspect-[4/5] bg-[#0b0b0b] rounded-[2.5rem] overflow-hidden relative shadow-2xl border-4 border-white/5">
                 <iframe 
-                  src="https://www.youtube.com/embed/IYIh4GJLfAo?rel=0&modestbranding=1" 
+                  ref={iframeRef}
+                  src={videoSrc}
                   className="w-full h-full border-none"
                   allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" 
                   title="Founder Message"
@@ -94,7 +113,7 @@ const AboutPage = () => {
               >
                 <div className="aspect-square rounded-[2rem] overflow-hidden mb-8 relative grayscale group-hover:grayscale-0 transition-all duration-700 border-4 border-white/5 shadow-2xl">
                   <div 
-                    className="absolute inset-0 bg-cover bg-center transition-transform duration-700 group-hover:scale-110"
+                    className={`absolute inset-0 bg-cover transition-transform duration-700 group-hover:scale-110 ${['Hisham AlAqtash', 'Omar Adel'].includes(member.name) ? 'bg-top' : 'bg-center'}`}
                     style={{ backgroundImage: `url("${member.image}")` }}
                   />
                   <div className="absolute inset-0 bg-navy/20 group-hover:bg-transparent transition-colors" />

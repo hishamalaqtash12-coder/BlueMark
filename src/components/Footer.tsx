@@ -34,9 +34,9 @@ const Footer = () => {
           <div>
             <h4 className="text-xs font-black uppercase tracking-[0.3em] text-white mb-8">Connect</h4>
             <ul className="space-y-6">
-              <li><a href="#" className="text-gray-500 font-bold uppercase text-xs tracking-widest hover:text-blue transition-colors">LinkedIn</a></li>
-              <li><a href="#" className="text-gray-500 font-bold uppercase text-xs tracking-widest hover:text-blue transition-colors">Instagram</a></li>
-              <li><a href="#" className="text-gray-500 font-bold uppercase text-xs tracking-widest hover:text-blue transition-colors">Twitter X</a></li>
+              <li><a href="https://www.linkedin.com/company/blue-mark-agency/" target="_blank" rel="noopener noreferrer" className="text-gray-500 font-bold uppercase text-xs tracking-widest hover:text-blue transition-colors">LinkedIn</a></li>
+              <li><a href="https://www.instagram.com/bluemark_agency" target="_blank" rel="noopener noreferrer" className="text-gray-500 font-bold uppercase text-xs tracking-widest hover:text-blue transition-colors">Instagram</a></li>
+              <li><a href="https://web.facebook.com/bluemarkagency1" target="_blank" rel="noopener noreferrer" className="text-gray-500 font-bold uppercase text-xs tracking-widest hover:text-blue transition-colors">Facebook</a></li>
             </ul>
           </div>
         </div>

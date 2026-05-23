@@ -1,29 +1,11 @@
 'use client';
 
-import { useState } from 'react';
 import { motion } from 'framer-motion';
 import Link from 'next/link';
-import { Video, Zap, Clock, DollarSign, Target, Play } from 'lucide-react';
 import FinalCTA from '@/components/FinalCTA';
-import { Swiper, SwiperSlide } from 'swiper/react';
-import { EffectCoverflow, Pagination, Navigation } from 'swiper/modules';
-
-import 'swiper/css';
-import 'swiper/css/effect-coverflow';
-import 'swiper/css/pagination';
-import 'swiper/css/navigation';
-
-const videoList = [
-  "SFBggkxPvaI", "WRy76IAL6kk", "WZ35n5HQShI", "1BO2E35ftIQ",
-  "oQEevurD2Lo", "LsITWJ4zo7g", "6d-N4G-tEl4", "ZJcm6B-IGj8",
-  "KwwAzBM2hLk", "GzGlUFFjL1c", "RAqK0tG1ITM", "M4Uctxic0cc",
-  "O0e-it2HZd0", "AYs4ekDzZOc", "6l0XqxznIeM", "4K1r2ithP_Y",
-  "p8c4u0j1ZCs", "7PHCmwC95Xc", "rXtNf4TgiYA", "wSMptYGVie8",
-  "gKCH9aPh93g", "c1BBHaaARr8", "vejh9NhBmDo"
-];
+import CreativePortfolio from '@/components/BlogPreview';
 
 export default function AIVideo() {
-  const [playingVideo, setPlayingVideo] = useState<string | null>(null);
 
   return (
     <div className="bg-dark-navy min-h-screen">
@@ -56,165 +38,9 @@ export default function AIVideo() {
       </section>
 
       {/* Videos Section */}
-      <section id="videos" className="py-20 bg-navy relative border-y border-white/5">
-        <div className="container px-6 mb-12 text-center">
-          <h2 className="text-3xl md:text-5xl font-black text-white uppercase tracking-tighter mb-4">
-            Our Work <span className="text-blue">Speaks for Itself</span>
-          </h2>
-        </div>
-
-        {/* 3D Coverflow Slider */}
-        <div className="w-full max-w-[1400px] mx-auto px-0 md:px-6 ai-video-slider">
-          <style jsx global>{`
-            .ai-video-slider .swiper-slide {
-              width: 280px;
-              opacity: 0.5;
-              transition: opacity 0.3s ease;
-            }
-            @media (min-width: 768px) {
-              .ai-video-slider .swiper-slide {
-                width: 380px;
-              }
-            }
-            .ai-video-slider .swiper-slide-active {
-              opacity: 1;
-            }
-            .ai-video-slider .swiper-slide-active > div {
-              border-color: rgba(0, 158, 219, 0.6);
-              box-shadow: 0 0 40px rgba(0, 158, 219, 0.2);
-            }
-            .ai-video-slider .swiper-button-next,
-            .ai-video-slider .swiper-button-prev {
-              color: white !important;
-              background: rgba(0, 0, 0, 0.6) !important;
-              border: 1px solid rgba(255,255,255,0.1) !important;
-              width: 50px !important;
-              height: 50px !important;
-              border-radius: 50% !important;
-              backdrop-filter: blur(10px) !important;
-              transition: all 0.3s ease !important;
-              display: flex !important;
-              align-items: center !important;
-              justify-content: center !important;
-            }
-            .ai-video-slider .swiper-button-next:hover,
-            .ai-video-slider .swiper-button-prev:hover {
-              background: #009edb !important;
-              border-color: #009edb !important;
-            }
-            .ai-video-slider .swiper-button-next:after,
-            .ai-video-slider .swiper-button-prev:after,
-            .ai-video-slider .swiper-button-next > *,
-            .ai-video-slider .swiper-button-prev > * {
-              display: none !important; /* Hide default Swiper font and SVGs */
-            }
-            .ai-video-slider .swiper-button-next::before {
-              content: '';
-              display: block;
-              width: 14px;
-              height: 14px;
-              border-top: 3px solid white;
-              border-right: 3px solid white;
-              transform: rotate(45deg);
-              margin-right: 4px;
-            }
-            .ai-video-slider .swiper-button-prev::before {
-              content: '';
-              display: block;
-              width: 14px;
-              height: 14px;
-              border-top: 3px solid white;
-              border-left: 3px solid white;
-              transform: rotate(-45deg);
-              margin-left: 4px;
-            }
-            .ai-video-slider .swiper-pagination-bullet {
-              background: white;
-              opacity: 0.3;
-            }
-            .ai-video-slider .swiper-pagination-bullet-active {
-              background: #009edb;
-              opacity: 1;
-              box-shadow: 0 0 10px rgba(0,158,219,0.8);
-            }
-          `}</style>
-          
-          <Swiper
-            effect={'coverflow'}
-            grabCursor={true}
-            centeredSlides={true}
-            slidesPerView={'auto'}
-            coverflowEffect={{
-              rotate: 0,
-              stretch: 50,
-              depth: 250,
-              modifier: 1,
-              slideShadows: false,
-            }}
-            loop={true}
-            navigation={true}
-            pagination={{ clickable: true, dynamicBullets: true }}
-            modules={[EffectCoverflow, Pagination, Navigation]}
-            className="pt-10 pb-20"
-            onSlideChange={(swiper) => {
-              if (!swiper.touches.diff) {
-                setPlayingVideo(null);
-              }
-            }}
-          >
-            {videoList.map((id, idx) => (
-              <SwiperSlide key={idx}>
-                <div className="bg-dark-navy rounded-3xl overflow-hidden aspect-[9/16] relative group border-2 border-white/5 transition-all duration-500 shadow-2xl">
-                  {playingVideo === id ? (
-                    <div className="absolute inset-0 z-50 w-full h-full bg-black">
-                      <iframe
-                        className="w-full h-full"
-                        src={`https://www.youtube.com/embed/${id}?autoplay=1&mute=0&rel=0&controls=1`}
-                        allow="autoplay; encrypted-media"
-                        allowFullScreen
-                      />
-                    </div>
-                  ) : (
-                    <>
-                      <img 
-                        src={`https://img.youtube.com/vi/${id}/maxresdefault.jpg`} 
-                        onError={(e) => { e.currentTarget.src = `https://img.youtube.com/vi/${id}/hqdefault.jpg`; }}
-                        alt={`AI Video ${idx + 1}`} 
-                        className="w-full h-full object-cover"
-                      />
-                      <div className="absolute inset-0 flex items-center justify-center bg-black/40 group-hover:bg-black/20 transition-colors">
-                        <button 
-                          onClick={() => setPlayingVideo(id)}
-                          className="w-16 h-16 md:w-20 md:h-20 bg-black/50 backdrop-blur-sm border border-white/20 rounded-full flex items-center justify-center text-white shadow-xl hover:bg-blue hover:border-blue hover:scale-110 transition-all duration-300 group-hover:shadow-[0_0_30px_rgba(0,158,219,0.4)]"
-                        >
-                          <Play className="w-8 h-8 md:w-10 md:h-10 ml-1 opacity-80 group-hover:opacity-100" />
-                        </button>
-                      </div>
-                    </>
-                  )}
-                </div>
-              </SwiperSlide>
-            ))}
-          </Swiper>
-        </div>
-
-        {/* Features Pills */}
-        <div className="container px-6 mt-16">
-          <div className="flex flex-wrap justify-center gap-4">
-            {[
-              { icon: <Video className="w-4 h-4 text-red-500" />, text: "No Filming Required" },
-              { icon: <Zap className="w-4 h-4 text-yellow-500" />, text: "48-Hour Delivery" },
-              { icon: <DollarSign className="w-4 h-4 text-green-500" />, text: "80% Cost Saving" },
-              { icon: <Target className="w-4 h-4 text-blue" />, text: "High Conversion" },
-            ].map((pill, idx) => (
-              <div key={idx} className="bg-white/5 border border-white/10 px-6 py-3 rounded-full flex items-center gap-3 text-sm md:text-base font-bold text-white uppercase tracking-wider shadow-lg">
-                {pill.icon}
-                {pill.text}
-              </div>
-            ))}
-          </div>
-        </div>
-      </section>
+      <div id="videos">
+        <CreativePortfolio />
+      </div>
 
       {/* Steps Section */}
       <section className="py-24 bg-dark-navy relative">
