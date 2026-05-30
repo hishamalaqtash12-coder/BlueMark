@@ -3,20 +3,32 @@
 import { motion } from 'framer-motion';
 import { MessageCircle } from 'lucide-react';
 import { useEffect } from 'react';
+import { useRouter } from 'next/navigation';
 
 const BookingPage = () => {
+  const router = useRouter();
+
   useEffect(() => {
     const script = document.createElement('script');
     script.src = 'https://assets.calendly.com/assets/external/widget.js';
     script.async = true;
     document.body.appendChild(script);
 
+    const handleMessage = (e: MessageEvent) => {
+      if (e.data.event && e.data.event === 'calendly.event_scheduled') {
+        router.push('/thank-you');
+      }
+    };
+
+    window.addEventListener('message', handleMessage);
+
     return () => {
       if (document.body.contains(script)) {
         document.body.removeChild(script);
       }
+      window.removeEventListener('message', handleMessage);
     };
-  }, []);
+  }, [router]);
 
   const handleWhatsApp = () => {
     const message = encodeURIComponent("Hello Blue Mark Team, I'm interested in booking a strategy call for my business growth.");

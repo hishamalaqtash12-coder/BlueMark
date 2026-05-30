@@ -2,21 +2,33 @@
 
 import { useEffect } from 'react';
 import { motion } from 'framer-motion';
+import { useRouter } from 'next/navigation';
 
 export default function SchedulePage() {
+  const router = useRouter();
+
   useEffect(() => {
     const script = document.createElement('script');
     script.src = 'https://assets.calendly.com/assets/external/widget.js';
     script.async = true;
     document.body.appendChild(script);
 
+    const handleMessage = (e: MessageEvent) => {
+      if (e.data.event && e.data.event === 'calendly.event_scheduled') {
+        router.push('/thank-you');
+      }
+    };
+
+    window.addEventListener('message', handleMessage);
+
     return () => {
       // Clean up script if component unmounts
       if (document.body.contains(script)) {
         document.body.removeChild(script);
       }
+      window.removeEventListener('message', handleMessage);
     };
-  }, []);
+  }, [router]);
 
   return (
     <div className="bg-dark-navy min-h-screen pt-32 pb-20">
