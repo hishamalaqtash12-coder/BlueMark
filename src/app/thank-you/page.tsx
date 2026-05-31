@@ -1,10 +1,18 @@
 'use client';
 
+import { useEffect } from 'react';
 import { motion } from 'framer-motion';
 import Link from 'next/link';
 import { CheckCircle } from 'lucide-react';
 
 export default function ThankYouPage() {
+  useEffect(() => {
+    // Fire the Meta Pixel 'Lead' event when someone reaches the thank you page
+    if (typeof window !== 'undefined' && typeof (window as any).fbq === 'function') {
+      (window as any).fbq('track', 'Lead');
+    }
+  }, []);
+
   return (
     <div className="bg-dark-navy min-h-screen flex items-center justify-center relative overflow-hidden pt-24 pb-24">
       {/* Background glow effect */}
