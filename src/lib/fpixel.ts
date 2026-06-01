@@ -1,4 +1,4 @@
-export const FB_PIXEL_ID = '1566185487879776';
+export const FB_PIXEL_ID = '983290421227195';
 
 export const pageview = () => {
   if (typeof window !== 'undefined' && (window as any).fbq) {

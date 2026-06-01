@@ -43,7 +43,7 @@ export default function RootLayout({
               t.src=v;s=b.getElementsByTagName(e)[0];
               s.parentNode.insertBefore(t,s)}(window,document,'script',
               'https://connect.facebook.net/en_US/fbevents.js');
-              fbq('init', '1566185487879776'); 
+              fbq('init', '983290421227195'); 
               fbq('track', 'PageView');
             `,
           }}
@@ -53,7 +53,7 @@ export default function RootLayout({
         className={`${fontSans.variable} ${fontHeading.variable} antialiased bg-[#000814] text-white min-h-screen`}
       >
         <noscript>
-          <img height="1" width="1" style={{ display: 'none' }} src="https://www.facebook.com/tr?id=1566185487879776&ev=PageView&noscript=1" alt="" />
+          <img height="1" width="1" style={{ display: 'none' }} src="https://www.facebook.com/tr?id=983290421227195&ev=PageView&noscript=1" alt="" />
         </noscript>
         <Suspense fallback={null}>
           <FacebookPixel />
