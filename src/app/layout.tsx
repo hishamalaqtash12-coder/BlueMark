@@ -1,6 +1,7 @@
 import type { Metadata } from "next";
 import { Inter, Plus_Jakarta_Sans } from "next/font/google";
 import { Suspense } from "react";
+import Script from "next/script";
 import "./globals.css";
 import Navbar from "@/components/Navbar";
 import Footer from "@/components/Footer";
@@ -52,6 +53,19 @@ export default function RootLayout({
       <body
         className={`${fontSans.variable} ${fontHeading.variable} antialiased bg-[#000814] text-white min-h-screen`}
       >
+        <Script
+          src="https://www.googletagmanager.com/gtag/js?id=G-3YBJ022RFT"
+          strategy="afterInteractive"
+        />
+        <Script id="google-analytics" strategy="afterInteractive">
+          {`
+            window.dataLayer = window.dataLayer || [];
+            function gtag(){window.dataLayer.push(arguments);}
+            gtag('js', new Date());
+
+            gtag('config', 'G-3YBJ022RFT');
+          `}
+        </Script>
         <noscript>
           <img height="1" width="1" style={{ display: 'none' }} src="https://www.facebook.com/tr?id=983290421227195&ev=PageView&noscript=1" alt="" />
         </noscript>
