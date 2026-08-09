@@ -58,7 +58,7 @@ const BookingPage = () => {
             initial={{ opacity: 0, x: -30 }}
             animate={{ opacity: 1, x: 0 }}
             transition={{ delay: 0.2 }}
-            className="lg:col-span-3 bg-white/[0.03] rounded-[2.5rem] p-8 md:p-12 border border-white/5 shadow-2xl relative overflow-hidden min-h-[800px]"
+            className="lg:col-span-3 bg-white/[0.03] rounded-[2.5rem] p-0 md:p-12 border border-white/5 shadow-2xl relative overflow-hidden min-h-[800px]"
           >
             <div className="absolute inset-0 bg-radial-glow opacity-10 pointer-events-none" />
             <div className="relative z-10 w-full h-full min-h-[700px] flex flex-col justify-center">
