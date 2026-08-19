@@ -16,7 +16,7 @@ const DeviceShowcase = () => {
   ];
 
   return (
-    <section className="py-24 md:py-32 bg-dark-navy overflow-hidden">
+    <section className="py-2 bg-dark-navy overflow-hidden">
       <div className="container px-6">
         <div className="text-center mb-16 md:mb-24">
           <h2 className="text-4xl md:text-7xl font-black text-white tracking-tighter mb-4 uppercase">

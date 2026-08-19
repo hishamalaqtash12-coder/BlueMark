@@ -6,7 +6,7 @@ import { Play } from 'lucide-react';
 
 const Hero = () => {
   return (
-    <section className="relative min-h-screen flex flex-col items-center justify-center pt-40 pb-20 overflow-hidden bg-dark-navy">
+    <section className="relative min-h-screen flex flex-col items-center justify-center pt-40 pb-2 overflow-hidden bg-dark-navy">
       {/* Background Cinematic Visual */}
       <div className="absolute inset-0 z-0">
         <div className="absolute inset-0 bg-gradient-to-b from-dark-navy via-transparent to-dark-navy z-10" />

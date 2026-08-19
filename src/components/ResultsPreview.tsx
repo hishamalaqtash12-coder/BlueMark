@@ -11,7 +11,7 @@ const stats = [
 
 const ResultsPreview = () => {
   return (
-    <section className="py-24 md:py-32 bg-dark-navy relative overflow-hidden">
+    <section className="py-2 bg-dark-navy relative overflow-hidden">
       <div className="container px-4 md:px-6">
         <div className="max-w-5xl mx-auto flex flex-col lg:flex-row gap-12 lg:gap-16 items-center">
           <div className="lg:w-1/2">

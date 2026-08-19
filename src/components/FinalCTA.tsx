@@ -13,7 +13,7 @@ const FinalCTA = ({
   subheadline = "Ready to grow?"
 }: FinalCTAProps) => {
   return (
-    <section className="py-24 md:py-48 bg-dark-navy relative overflow-hidden text-center">
+    <section className="py-2 bg-dark-navy relative overflow-hidden text-center">
       {/* Background Glows */}
       <div className="absolute top-0 left-1/4 w-[300px] md:w-[500px] h-[300px] md:h-[500px] bg-blue/10 rounded-full blur-[100px] md:blur-[120px]" />
       <div className="absolute bottom-0 right-1/4 w-[300px] md:w-[500px] h-[300px] md:h-[500px] bg-blue/10 rounded-full blur-[100px] md:blur-[120px]" />
