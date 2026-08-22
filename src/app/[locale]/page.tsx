@@ -5,8 +5,18 @@ import ResultsPreview from "@/components/ResultsPreview";
 import TeamAuthority from "@/components/TeamAuthority";
 import BlogPreview from "@/components/BlogPreview";
 import FinalCTA from "@/components/FinalCTA";
+import { getTranslations, setRequestLocale } from "next-intl/server";
 
-export default function Home() {
+export default async function Home({
+  params,
+}: {
+  params: Promise<{ locale: string }>;
+}) {
+  const { locale } = await params;
+  setRequestLocale(locale);
+
+  const t = await getTranslations('home.finalCta');
+
   return (
     <>
       <Hero />
@@ -27,9 +37,15 @@ export default function Home() {
       </div>
       <div id="book">
         <FinalCTA 
-        headline={<>Ready to Scale <br /> Your <span className="text-blue">Business?</span></>} 
-        subheadline="Next Steps"
-      />
+          headline={
+            <>
+              {t('headlinePart1')} {t('headlinePart2') && <><br />{t('headlinePart2')} </>}
+              <span className="text-blue">{t('headlineHighlight')}</span>
+            </>
+          } 
+          subheadline={t('badge')}
+          buttonText={t('button')}
+        />
       </div>
     </>
   );

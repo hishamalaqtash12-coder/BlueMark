@@ -3,6 +3,7 @@
 import { motion } from 'framer-motion';
 import { ChevronRight, ChevronLeft } from 'lucide-react';
 import { useRef } from 'react';
+import { useTranslations } from 'next-intl';
 
 const videos = [
   'p8c4u0j1ZCs',
@@ -17,12 +18,17 @@ const videos = [
 ];
 
 const CreativePortfolio = () => {
+  const t = useTranslations('home.creativePortfolio');
   const scrollRef = useRef<HTMLDivElement>(null);
 
   const scroll = (direction: 'left' | 'right') => {
     if (scrollRef.current) {
       const { current } = scrollRef;
-      const scrollAmount = direction === 'left' ? -350 : 350;
+      const isRtl = document.dir === 'rtl';
+      let scrollAmount = direction === 'left' ? -350 : 350;
+      if (isRtl) {
+        scrollAmount = -scrollAmount;
+      }
       current.scrollBy({ left: scrollAmount, behavior: 'smooth' });
     }
   };
@@ -31,14 +37,14 @@ const CreativePortfolio = () => {
     <section className="py-2 bg-dark-navy overflow-hidden">
       <div className="container px-6">
         <div className="flex flex-col md:flex-row justify-between items-end mb-16 md:mb-20 gap-6">
-          <div className="text-left">
+          <div className="text-start">
             <motion.h2 
               initial={{ opacity: 0, x: -30 }}
               whileInView={{ opacity: 1, x: 0 }}
               viewport={{ once: true }}
               className="text-4xl md:text-6xl font-black text-white tracking-tighter uppercase leading-tight"
             >
-              AI Creative <br className="md:hidden" /><span className="text-blue">Portfolio</span>
+              {t('headline')} <br className="md:hidden" /><span className="text-blue">{t('headlineHighlight')}</span>
             </motion.h2>
             <motion.p 
               initial={{ opacity: 0, y: 10 }}
@@ -47,16 +53,26 @@ const CreativePortfolio = () => {
               transition={{ delay: 0.1 }}
               className="text-gray-400 mt-4 max-w-xl font-medium"
             >
-              Scroll to view our latest AI-generated short-form content designed for maximum engagement.
+              {t('subheadline')}
             </motion.p>
           </div>
           
           <div className="flex gap-4">
-            <button onClick={() => scroll('left')} className="w-12 h-12 rounded-full border border-white/10 flex items-center justify-center hover:bg-white/5 transition-colors text-white">
-              <ChevronLeft className="w-6 h-6" />
+            <button 
+              type="button"
+              aria-label={t('prev')}
+              onClick={() => scroll('left')} 
+              className="w-12 h-12 rounded-full border border-white/10 flex items-center justify-center hover:bg-white/5 transition-colors text-white"
+            >
+              <ChevronLeft className="w-6 h-6 rtl:-scale-x-100" />
             </button>
-            <button onClick={() => scroll('right')} className="w-12 h-12 rounded-full border border-white/10 flex items-center justify-center hover:bg-white/5 transition-colors text-white">
-              <ChevronRight className="w-6 h-6" />
+            <button 
+              type="button"
+              aria-label={t('next')}
+              onClick={() => scroll('right')} 
+              className="w-12 h-12 rounded-full border border-white/10 flex items-center justify-center hover:bg-white/5 transition-colors text-white"
+            >
+              <ChevronRight className="w-6 h-6 rtl:-scale-x-100" />
             </button>
           </div>
         </div>
@@ -86,8 +102,8 @@ const CreativePortfolio = () => {
             ))}
           </div>
           {/* Edge Gradients for smooth scrolling fade */}
-          <div className="absolute top-0 bottom-0 left-0 w-8 md:w-24 bg-gradient-to-r from-dark-navy to-transparent pointer-events-none" />
-          <div className="absolute top-0 bottom-0 right-0 w-8 md:w-24 bg-gradient-to-l from-dark-navy to-transparent pointer-events-none" />
+          <div className="absolute top-0 bottom-0 start-0 w-8 md:w-24 bg-gradient-to-r rtl:bg-gradient-to-l from-dark-navy to-transparent pointer-events-none" />
+          <div className="absolute top-0 bottom-0 end-0 w-8 md:w-24 bg-gradient-to-l rtl:bg-gradient-to-r from-dark-navy to-transparent pointer-events-none" />
         </div>
       </div>
     </section>

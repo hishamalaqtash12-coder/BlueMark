@@ -2,16 +2,18 @@
 
 import { useEffect } from 'react';
 import { motion } from 'framer-motion';
-import Link from 'next/link';
+import { Link } from '@/i18n/routing';
 import { CheckCircle } from 'lucide-react';
+import { useTranslations } from 'next-intl';
 import * as fpixel from '@/lib/fpixel';
 
 export default function ThankYouPage() {
+  const t = useTranslations('thankYou');
+
   useEffect(() => {
     // Fire the Meta Pixel 'Lead' event when someone reaches the thank you page
     fpixel.event('Lead');
   }, []);
-
 
   return (
     <div className="bg-dark-navy min-h-screen flex items-center justify-center relative overflow-hidden pt-24 pb-24">
@@ -38,11 +40,11 @@ export default function ThankYouPage() {
           </motion.div>
           
           <h1 className="text-4xl md:text-6xl font-black text-white mb-6 uppercase tracking-tighter relative z-10">
-            Booking <span className="text-blue">Confirmed</span>
+            {t('titlePart1')} <span className="text-blue">{t('titlePart2')}</span>
           </h1>
           
           <p className="text-gray-400 text-lg md:text-xl leading-relaxed mb-10 font-medium relative z-10">
-            Thank you for scheduling a strategy call with Blue Mark. We've sent a calendar invitation with the meeting details to your email. We look forward to speaking with you!
+            {t('message')}
           </p>
           
           <div className="relative z-10">
@@ -50,7 +52,7 @@ export default function ThankYouPage() {
               href="/"
               className="inline-flex items-center justify-center bg-blue text-white py-4 px-10 rounded-xl font-black uppercase tracking-widest hover:bg-white hover:text-navy transition-all shadow-[0_0_20px_rgba(0,158,219,0.4)] w-full sm:w-auto"
             >
-              Back to Homepage
+              {t('backHome')}
             </Link>
           </div>
         </motion.div>

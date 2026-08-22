@@ -5,8 +5,9 @@
   --color-blue: #009EDB;
   --color-dark-navy: #000814;
   
-  --font-sans: 'Inter', sans-serif;
-  --font-heading: 'Plus Jakarta Sans', sans-serif;
+  --font-sans: var(--font-sans), 'Inter', sans-serif;
+  --font-heading: var(--font-heading), 'Plus Jakarta Sans', sans-serif;
+  --font-arabic: var(--font-arabic), 'IBM Plex Sans Arabic', sans-serif;
 
   --animate-float: float 6s ease-in-out infinite;
   --animate-scroll: scroll 30s linear infinite;
@@ -35,13 +36,48 @@ html, body {
 }
 
 body {
-  font-family: 'Inter', sans-serif;
+  font-family: var(--font-sans), 'Inter', sans-serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
 }
 
+/* Typography for Arabic (RTL) */
+[dir="rtl"], [lang="ar"] {
+  font-family: var(--font-arabic), 'IBM Plex Sans Arabic', sans-serif !important;
+  letter-spacing: normal !important;
+}
+
+[dir="rtl"] h1, [dir="rtl"] h2, [dir="rtl"] h3, [dir="rtl"] h4, [dir="rtl"] h5, [dir="rtl"] h6,
+[lang="ar"] h1, [lang="ar"] h2, [lang="ar"] h3, [lang="ar"] h4, [lang="ar"] h5, [lang="ar"] h6 {
+  font-family: var(--font-arabic), 'IBM Plex Sans Arabic', sans-serif !important;
+  letter-spacing: normal !important;
+  text-transform: none !important;
+  line-height: 1.15;
+}
+
+[dir="rtl"] p, [dir="rtl"] span, [dir="rtl"] a, [dir="rtl"] button, [dir="rtl"] div,
+[lang="ar"] p, [lang="ar"] span, [lang="ar"] a, [lang="ar"] button, [lang="ar"] div {
+  letter-spacing: 0 !important;
+}
+
+[dir="rtl"] .tracking-tighter, [dir="rtl"] .tracking-tight, [dir="rtl"] .tracking-widest, [dir="rtl"] .tracking-wide,
+[lang="ar"] .tracking-tighter, [lang="ar"] .tracking-tight, [lang="ar"] .tracking-widest, [lang="ar"] .tracking-wide {
+  letter-spacing: 0 !important;
+  text-transform: none !important;
+}
+
+/* RTL Marquee Animation */
+[dir="rtl"] .animate-scroll {
+  animation: scroll-rtl 30s linear infinite;
+}
+
+@keyframes scroll-rtl {
+  0% { transform: translateX(0); }
+  100% { transform: translateX(50%); }
+}
+
 h1, h2, h3, h4, h5, h6 {
-  font-family: 'Plus Jakarta Sans', sans-serif;
+  font-family: var(--font-heading), 'Plus Jakarta Sans', sans-serif;
   font-weight: 800;
   letter-spacing: -0.04em;
   text-transform: uppercase;
@@ -87,6 +123,11 @@ h1, h2, h3, h4, h5, h6 {
   max-width: 100%; /* Prevent button overflow */
 }
 
+[dir="rtl"] .btn-primary, [lang="ar"] .btn-primary {
+  letter-spacing: 0 !important;
+  text-transform: none !important;
+}
+
 .btn-primary:hover {
   box-shadow: 0 0 20px rgba(0, 158, 219, 0.5);
   transform: scale(1.05);
@@ -110,10 +151,10 @@ section {
 .container {
   width: 100%;
   max-width: 100%;
-  padding-left: 1.5rem;
-  padding-right: 1.5rem;
-  margin-left: auto;
-  margin-right: auto;
+  padding-inline-start: 1.5rem;
+  padding-inline-end: 1.5rem;
+  margin-inline-start: auto;
+  margin-inline-end: auto;
 }
 
 @media (min-width: 1280px) {

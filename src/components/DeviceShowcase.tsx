@@ -2,17 +2,19 @@
 
 import { motion, useInView } from 'framer-motion';
 import { CheckCircle2 } from 'lucide-react';
-import { useRef, useEffect } from 'react';
+import { useRef } from 'react';
+import { useTranslations } from 'next-intl';
 
 const DeviceShowcase = () => {
+  const t = useTranslations('home.showcase');
   const containerRef = useRef(null);
   const isInView = useInView(containerRef, { amount: 0.3 });
 
   const features = [
-    { title: 'Business Growth', desc: 'Scalable strategies for long-term success.' },
-    { title: 'Revenue Focus', desc: 'Direct impact on your bottom line.' },
-    { title: 'Brand Authority', desc: 'Position yourself as an industry leader.' },
-    { title: 'Market Dominance', desc: 'Outperform your competitors with ease.' },
+    { title: t('features.businessGrowth.title'), desc: t('features.businessGrowth.desc') },
+    { title: t('features.revenueFocus.title'), desc: t('features.revenueFocus.desc') },
+    { title: t('features.brandAuthority.title'), desc: t('features.brandAuthority.desc') },
+    { title: t('features.marketDominance.title'), desc: t('features.marketDominance.desc') },
   ];
 
   return (
@@ -20,14 +22,16 @@ const DeviceShowcase = () => {
       <div className="container px-6">
         <div className="text-center mb-16 md:mb-24">
           <h2 className="text-4xl md:text-7xl font-black text-white tracking-tighter mb-4 uppercase">
-            What we can <br /> <span className="text-blue">Achieve Together</span>
+            {t('headline')} <br /> <span className="text-blue">{t('headlineHighlight')}</span>
           </h2>
-          <p className="text-gray-400 uppercase font-bold tracking-[0.1em] md:tracking-[0.2em] text-[10px] md:text-sm">Targeted results for ambitious brands</p>
+          <p className="text-gray-400 uppercase font-bold tracking-[0.1em] md:tracking-[0.2em] text-[10px] md:text-sm">
+            {t('badge')}
+          </p>
         </div>
 
         <div className="flex flex-col lg:flex-row items-center justify-center gap-12 lg:gap-0">
           {/* Left Side Features */}
-          <div className="w-full lg:w-1/3 flex flex-col gap-8 md:gap-12 text-center lg:text-right order-2 lg:order-1">
+          <div className="w-full lg:w-1/3 flex flex-col gap-8 md:gap-12 text-center lg:text-end order-2 lg:order-1">
             {features.slice(0, 2).map((f, i) => (
               <motion.div 
                 key={i}
@@ -40,14 +44,14 @@ const DeviceShowcase = () => {
                    <CheckCircle2 className="w-5 h-5 md:w-6 md:h-6 text-blue shrink-0" />
                    <h3 className="text-xl md:text-2xl font-black text-white uppercase tracking-tight group-hover:text-blue transition-colors">{f.title}</h3>
                 </div>
-                <p className="text-gray-400 text-sm max-w-xs mx-auto lg:ml-auto">{f.desc}</p>
+                <p className="text-gray-400 text-sm max-w-xs mx-auto lg:ms-auto">{f.desc}</p>
               </motion.div>
             ))}
           </div>
 
           {/* Center Video */}
           <div ref={containerRef} className="w-full lg:w-1/3 relative flex justify-center order-1 lg:order-2 mb-8 lg:mb-0 px-4">
-             <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[300px] md:w-[500px] h-[200px] md:h-[300px] bg-blue/20 rounded-full blur-[80px] md:blur-[100px] animate-pulse-slow" />
+             <div className="absolute top-1/2 start-1/2 -translate-x-1/2 -translate-y-1/2 w-[300px] md:w-[500px] h-[200px] md:h-[300px] bg-blue/20 rounded-full blur-[80px] md:blur-[100px] animate-pulse-slow" />
              <motion.div
                initial={{ opacity: 0, scale: 0.8, y: 50 }}
                whileInView={{ opacity: 1, scale: 1, y: 0 }}
@@ -69,7 +73,7 @@ const DeviceShowcase = () => {
           </div>
 
           {/* Right Side Features */}
-          <div className="w-full lg:w-1/3 flex flex-col gap-8 md:gap-12 text-center lg:text-left order-3">
+          <div className="w-full lg:w-1/3 flex flex-col gap-8 md:gap-12 text-center lg:text-start order-3">
             {features.slice(2, 4).map((f, i) => (
               <motion.div 
                 key={i}
@@ -82,7 +86,7 @@ const DeviceShowcase = () => {
                    <CheckCircle2 className="w-5 h-5 md:w-6 md:h-6 text-blue shrink-0" />
                    <h3 className="text-xl md:text-2xl font-black text-white uppercase tracking-tight group-hover:text-blue transition-colors">{f.title}</h3>
                 </div>
-                <p className="text-gray-400 text-sm max-w-xs mx-auto lg:mr-auto">{f.desc}</p>
+                <p className="text-gray-400 text-sm max-w-xs mx-auto lg:me-auto">{f.desc}</p>
               </motion.div>
             ))}
           </div>

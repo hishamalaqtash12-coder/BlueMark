@@ -2,25 +2,28 @@
 
 import { useRef, useEffect } from 'react';
 import { motion, useInView } from 'framer-motion';
-import Link from 'next/link';
+import { Link } from '@/i18n/routing';
+import { useTranslations } from 'next-intl';
 
 const teamMembers = [
-  { name: 'Hisham AlAqtash', role: 'Founder and CEO', image: '/ourteam/Hisham AlAqtash _ Founder and CEO .jpeg' },
-  { name: 'Batool', role: 'Marketing Manager', image: '/ourteam/Batool _ Marketing Manager .jpeg' },
-  { name: 'Natasha Jankhout', role: 'CEO Assistant', image: '/ourteam/Natasha Jankhout _ CEO Assistant.jpeg' },
-  { name: 'Noor Aldeen AlQaisi', role: 'Project Manager', image: '/ourteam/Noor Aldeen AlQaisi _ Project Manager .PNG' },
-  { name: 'Noor Hindi', role: 'Account Manager', image: '/ourteam/Noor Hindi _ Account Manager .jpeg' },
-  { name: 'Fatima Jibril', role: 'Account Manager', image: '/ourteam/Fatima Jibril _ Account Manager .jpeg' },
-  { name: 'Alaa AlAqtash', role: 'Media Buyer', image: '/ourteam/Alaa AlAqtash _ Media Buyer .jpeg' },
-  { name: 'Bassem Tolomedjian', role: 'AI Content Creator, Video editor', image: '/ourteam/Bassem Tolomedjian _ AI Content Creator, Video editor .png' },
-  { name: 'Omar Adel', role: 'Senior Graphic Designer & Video Editor', image: '/ourteam/Omar Adel_ Senior Graphic Designer & Video Editor.jpeg' },
-  { name: 'Ebrahim Fathi', role: 'Graphic Designer', image: '/ourteam/Ebrahim Fathi _ Graphic Designer .webp' },
-  { name: 'Omar Remah', role: 'Video Editor', image: '/ourteam/Omar Remah _ Video Editor .jpeg' },
-  { name: 'Shadi Adel', role: 'Video Editor', image: '/ourteam/Shadi Adel_ Video Editor.jpeg' },
-  { name: 'Motasem Odeh', role: 'Web Developer', image: '/ourteam/Motasem Odeh - Web Developer.jpg' }
+  { name: 'Hisham AlAqtash', roleKey: 'ceo', image: '/ourteam/Hisham AlAqtash _ Founder and CEO .jpeg' },
+  { name: 'Batool', roleKey: 'marketingManager', image: '/ourteam/Batool _ Marketing Manager .jpeg' },
+  { name: 'Jasmine Bani Mustafa', roleKey: 'adminAndBizDev', image: '/ourteam/Natasha Jankhout _ CEO Assistant.jpeg' },
+  { name: 'Noor Aldeen Alaqtash', roleKey: 'kuwaitProjectManager', image: '/ourteam/Noor Aldeen AlQaisi _ Project Manager .PNG' },
+  { name: 'Noor Hindi', roleKey: 'accountManager', image: '/ourteam/Noor Hindi _ Account Manager .jpeg' },
+  { name: 'Fatima Jibril', roleKey: 'accountManager', image: '/ourteam/Fatima Jibril _ Account Manager .jpeg' },
+  { name: 'Areen Asklan', roleKey: 'accountManager', image: '/ourteam/Fatima Jibril _ Account Manager .jpeg' },
+  { name: 'Alaa AlAqtash', roleKey: 'mediaBuyer', image: '/ourteam/Alaa AlAqtash _ Media Buyer .jpeg' },
+  { name: 'Khaled', roleKey: 'mediaBuyer', image: '/ourteam/Omar Remah _ Video Editor .jpeg' },
+  { name: 'Bassem Tolomedjian', roleKey: 'aiContentAndEditor', image: '/ourteam/Bassem Tolomedjian _ AI Content Creator, Video editor .png' },
+  { name: 'Omar Adel', roleKey: 'seniorDesignerAndEditor', image: '/ourteam/Omar Adel_ Senior Graphic Designer & Video Editor.jpeg' },
+  { name: 'Ebrahim Fathi', roleKey: 'graphicDesigner', image: '/ourteam/Ebrahim Fathi _ Graphic Designer .webp' },
+  { name: 'Shadi Adel', roleKey: 'videoEditor', image: '/ourteam/Shadi Adel_ Video Editor.jpeg' },
+  { name: 'Motasem Odeh', roleKey: 'webDeveloper', image: '/ourteam/Motasem Odeh - Web Developer.jpg' }
 ];
 
 const AboutPage = () => {
+  const t = useTranslations('about');
   const videoRef = useRef<HTMLDivElement>(null);
   const iframeRef = useRef<HTMLIFrameElement>(null);
   const isVideoInView = useInView(videoRef, { margin: "-100px" });
@@ -49,18 +52,20 @@ const AboutPage = () => {
             animate={{ opacity: 1, y: 0 }}
             className="max-w-5xl"
           >
-            <span className="text-blue font-bold tracking-[0.3em] uppercase text-xs mb-4 block text-glow">The Blue Mark Philosophy</span>
+            <span className="text-blue font-bold tracking-[0.3em] uppercase text-xs mb-4 block text-glow">
+              {t('hero.badge')}
+            </span>
             <h1 className="text-5xl md:text-[8rem] font-black text-white mb-8 tracking-tighter leading-none uppercase">
-              Built Around Performance, <br /> <span className="text-blue">Not Hype.</span>
+              {t('hero.headlinePart1')} <br /> <span className="text-blue">{t('hero.headlinePart2')}</span>
             </h1>
             <p className="text-sm md:text-2xl text-gray-400 leading-relaxed max-w-3xl font-bold uppercase tracking-widest">
-              Growth through performance-driven marketing, lead generation, creative execution, and scalable growth strategies.
+              {t('hero.subheadline')}
             </p>
           </motion.div>
         </div>
       </section>
 
-      {/* Founder Video Section */}
+      {/* Founder Video Section / Pillars */}
       <section className="py-24">
         <div className="container px-6">
           <div className="flex flex-col lg:flex-row gap-20 items-center">
@@ -71,25 +76,39 @@ const AboutPage = () => {
                   src={videoSrc}
                   className="w-full h-full border-none"
                   allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" 
-                  title="Founder Message"
+                  title={t('video.title')}
                   allowFullScreen
                 ></iframe>
               </div>
             </div>
             <div className="lg:w-1/2">
-              <h2 className="text-4xl md:text-7xl font-black text-white mb-10 tracking-tighter leading-tight uppercase">How We Think <br /> <span className="text-blue">About Growth.</span></h2>
+              <h2 className="text-4xl md:text-7xl font-black text-white mb-10 tracking-tighter leading-tight uppercase">
+                {t('pillarsSection.headline')} <br /> <span className="text-blue">{t('pillarsSection.headlineHighlight')}</span>
+              </h2>
               <div className="space-y-12">
                  <div className="group">
-                    <h3 className="text-xl md:text-2xl font-black text-white mb-3 uppercase tracking-tight group-hover:text-blue transition-colors">Strategy Over Tactics</h3>
-                    <p className="text-gray-400 leading-relaxed font-medium">Most businesses struggle because they chase tactics without a cohesive strategy. We build the foundation first.</p>
+                    <h3 className="text-xl md:text-2xl font-black text-white mb-3 uppercase tracking-tight group-hover:text-blue transition-colors">
+                      {t('pillarsSection.pillar1.title')}
+                    </h3>
+                    <p className="text-gray-400 leading-relaxed font-medium">
+                      {t('pillarsSection.pillar1.desc')}
+                    </p>
                  </div>
                  <div className="group">
-                    <h3 className="text-xl md:text-2xl font-black text-white mb-3 uppercase tracking-tight group-hover:text-blue transition-colors">The Execution Gap</h3>
-                    <p className="text-gray-400 leading-relaxed font-medium">Ideas are cheap. Execution is everything. Our team is built around operators who know how to ship and scale.</p>
+                    <h3 className="text-xl md:text-2xl font-black text-white mb-3 uppercase tracking-tight group-hover:text-blue transition-colors">
+                      {t('pillarsSection.pillar2.title')}
+                    </h3>
+                    <p className="text-gray-400 leading-relaxed font-medium">
+                      {t('pillarsSection.pillar2.desc')}
+                    </p>
                  </div>
                  <div className="group">
-                    <h3 className="text-xl md:text-2xl font-black text-white mb-3 uppercase tracking-tight group-hover:text-blue transition-colors">Long-Term Partnership</h3>
-                    <p className="text-gray-400 leading-relaxed font-medium">We don't want a one-time project. We want to be your growth partner for the next decade.</p>
+                    <h3 className="text-xl md:text-2xl font-black text-white mb-3 uppercase tracking-tight group-hover:text-blue transition-colors">
+                      {t('pillarsSection.pillar3.title')}
+                    </h3>
+                    <p className="text-gray-400 leading-relaxed font-medium">
+                      {t('pillarsSection.pillar3.desc')}
+                    </p>
                  </div>
               </div>
             </div>
@@ -100,7 +119,9 @@ const AboutPage = () => {
       {/* Team Section */}
       <section className="py-24 bg-white/5 border-y border-white/5">
         <div className="container px-6 text-center">
-          <h2 className="text-4xl md:text-7xl font-black text-white mb-20 tracking-tighter uppercase">The Team Behind <br /> <span className="text-blue">The Numbers</span></h2>
+          <h2 className="text-4xl md:text-7xl font-black text-white mb-20 tracking-tighter uppercase">
+            {t('team.headline')} <br /> <span className="text-blue">{t('team.headlineHighlight')}</span>
+          </h2>
           <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-8 md:gap-12">
             {teamMembers.map((member, index) => (
               <motion.div
@@ -119,7 +140,9 @@ const AboutPage = () => {
                   <div className="absolute inset-0 bg-navy/20 group-hover:bg-transparent transition-colors" />
                 </div>
                 <h4 className="text-2xl font-black text-white mb-1 tracking-tighter uppercase">{member.name}</h4>
-                <p className="text-blue font-black uppercase text-[10px] tracking-[0.2em]">{member.role}</p>
+                <p className="text-blue font-black uppercase text-[10px] tracking-[0.2em]">
+                  {t(`team.roles.${member.roleKey}`)}
+                </p>
               </motion.div>
             ))}
           </div>
@@ -129,7 +152,9 @@ const AboutPage = () => {
       {/* Culture Section */}
       <section className="py-24 overflow-hidden">
          <div className="container px-6 text-center mb-16">
-            <h2 className="text-3xl md:text-5xl font-black text-white tracking-tighter uppercase">Behind <span className="text-blue">The Scenes</span></h2>
+            <h2 className="text-3xl md:text-5xl font-black text-white tracking-tighter uppercase">
+              {t('culture.headline')} <span className="text-blue">{t('culture.headlineHighlight')}</span>
+            </h2>
          </div>
          <div className="container px-6">
             <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
@@ -149,13 +174,13 @@ const AboutPage = () => {
       <section className="py-32 bg-dark-navy text-center">
         <div className="container px-6">
           <h2 className="text-4xl md:text-8xl font-black text-white mb-12 tracking-tighter leading-tight uppercase">
-            Let’s Build <br /> <span className="text-blue text-glow">Something That Grows.</span>
+            {t('cta.headlinePart1')} <br /> <span className="text-blue text-glow">{t('cta.headlineHighlight')}</span>
           </h2>
           <Link
             href="/book"
             className="btn-primary"
           >
-            Book Free Strategy Call
+            {t('cta.button')}
           </Link>
         </div>
       </section>

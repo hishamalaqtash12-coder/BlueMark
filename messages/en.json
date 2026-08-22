@@ -1,0 +1,550 @@
+{
+  "metadata": {
+    "title": "Blue Mark | Growth Solutions Built to Drive Sales",
+    "description": "We help businesses generate qualified leads, increase revenue, and scale through performance marketing, content, websites, and automation.",
+    "home": {
+      "title": "Blue Mark | Growth Solutions Built to Drive Sales",
+      "description": "We help businesses generate qualified leads, increase revenue, and scale through performance marketing, content, websites, and automation."
+    },
+    "results": {
+      "title": "Results | Blue Mark Growth Agency",
+      "description": "A snapshot of growth campaigns, lead generation strategies, and real results across industries."
+    },
+    "about": {
+      "title": "About Us | Blue Mark Growth Agency",
+      "description": "Growth through performance-driven marketing, serious lead generation, real creative execution, and scalable growth strategies."
+    },
+    "book": {
+      "title": "Book Strategy Call | Blue Mark Growth Agency",
+      "description": "In 30 minutes, we'll audit your current marketing and hand you a clear, actionable growth roadmap."
+    },
+    "aiVideo": {
+      "title": "AI Video Production | Blue Mark",
+      "description": "AI-powered video production (Scenes, Characters, Voice-over & Editing). Ready for ads. Built for results."
+    },
+    "websiteSolutions": {
+      "title": "Website Solutions | Blue Mark",
+      "description": "High-performance, intelligent websites designed to work for you 24/7."
+    },
+    "thankYou": {
+      "title": "Booking Confirmed | Blue Mark",
+      "description": "Thank you for scheduling a strategy call with Blue Mark."
+    }
+  },
+  "nav": {
+    "home": "Home",
+    "results": "Results",
+    "about": "About",
+    "book": "Book Call",
+    "languageSwitcher": {
+      "ar": "العربية",
+      "en": "English",
+      "ariaLabel": "Switch language"
+    },
+    "logoAlt": "Blue Mark Logo",
+    "openMenu": "Open menu",
+    "closeMenu": "Close menu"
+  },
+  "footer": {
+    "description": "Growth solutions built to drive sales. We help businesses generate qualified leads, increase revenue, and scale through performance marketing and automation.",
+    "explore": "Explore",
+    "connect": "Connect",
+    "links": {
+      "home": "Home",
+      "results": "Results",
+      "about": "About"
+    },
+    "social": {
+      "linkedIn": "LinkedIn",
+      "instagram": "Instagram",
+      "facebook": "Facebook"
+    },
+    "copyright": "© {year} Blue Mark Growth Agency. All rights reserved.",
+    "privacy": "Privacy",
+    "terms": "Terms"
+  },
+  "common": {
+    "bookCall": "Book Call",
+    "bookFreeCall": "Book Free Strategy Call",
+    "bookCallNow": "Book Your Call Now",
+    "bookConsultation": "Book Free Consultation",
+    "viewWork": "View Our Work",
+    "seeSmartWork": "See Our Smart Work",
+    "selectPlan": "Select Plan",
+    "claimOffer": "Claim Offer",
+    "performanceData": "Performance Data",
+    "watchCaseStudy": "Watch Case Study",
+    "closeVideo": "Close video",
+    "step": "Step",
+    "nextSteps": "Next Steps",
+    "realGrowth": "Real Growth"
+  },
+  "home": {
+    "hero": {
+      "badge": "Premium Growth Solutions",
+      "headlinePart1": "Real Growth",
+      "headlinePart2": "Starts Here",
+      "subheadline": "Serious leads, scalable revenue, and execution backed by real results — not promises.",
+      "button1": "Book Your Free Strategy Call",
+      "button2": "View Our Work"
+    },
+    "quickStats": {
+      "markets": {
+        "value": "9+",
+        "label": "Number of markets served"
+      },
+      "leads": {
+        "value": "250K+",
+        "label": "Average monthly leads generated for clients"
+      },
+      "roas": {
+        "value": "800%+",
+        "label": "Average client ROAS"
+      }
+    },
+    "coreServices": {
+      "headline": "Strategic Growth",
+      "headlineHighlight": "At Every Stage",
+      "subheadline": "Our full-stack digital marketing solutions",
+      "leadGen": {
+        "title": "Social Media Leads Generation",
+        "description": "We build serious, sales-ready lead generation systems on social media, not just followers and likes.",
+        "step": "01"
+      },
+      "ads": {
+        "title": "Ads Management",
+        "description": "Professional, data-driven management of your ads across every platform (Meta, Google, TikTok), with continuous optimization, not guesswork.",
+        "step": "02"
+      }
+    },
+    "additionalServices": {
+      "webDev": {
+        "title": "High-converting website development",
+        "description": "High-converting websites built for business growth.",
+        "step": "03"
+      },
+      "automation": {
+        "title": "Marketing automation for operational efficiency",
+        "description": "Smart workflows to improve operational efficiency.",
+        "step": "04"
+      },
+      "aiVideo": {
+        "title": "AI-generated video ads without filming",
+        "description": "High-converting video ads without filming.",
+        "step": "05"
+      }
+    },
+    "showcase": {
+      "badge": "Targeted results for ambitious brands",
+      "headline": "What we can",
+      "headlineHighlight": "Achieve Together",
+      "features": {
+        "businessGrowth": {
+          "title": "Business Growth",
+          "desc": "Scalable strategies for long-term success."
+        },
+        "revenueFocus": {
+          "title": "Revenue Focus",
+          "desc": "Direct impact on your bottom line."
+        },
+        "brandAuthority": {
+          "title": "Brand Authority",
+          "desc": "Position yourself as an industry leader."
+        },
+        "marketDominance": {
+          "title": "Market Dominance",
+          "desc": "Outperform your competitors with ease."
+        }
+      }
+    },
+    "achievements": {
+      "headline": "Real Work.",
+      "headlineHighlight": "Real Growth.",
+      "adSpend": {
+        "value": "$1M+",
+        "label": "Total ad spend managed"
+      },
+      "leads": {
+        "value": "250K+",
+        "label": "Total leads generated for clients"
+      },
+      "experience": {
+        "value": "10+",
+        "label": "Years / markets of experience"
+      },
+      "roas": {
+        "value": "800%+",
+        "label": "Average client ROAS"
+      }
+    },
+    "aboutBlurb": {
+      "headline": "Built by a Team",
+      "headlineHighlight": "Focused on Results",
+      "text": "Blue Mark works with ambitious business owners across Jordan and the Gulf — and wherever the opportunity is — to build measurable growth strategies and real results.",
+      "pillars": {
+        "strategy": "Strategy first, not random tactics",
+        "execution": "Real creative execution, not just ideas",
+        "optimization": "Continuous, data-driven optimization",
+        "directComm": "Direct communication with the founders, no middlemen"
+      }
+    },
+    "creativePortfolio": {
+      "headline": "AI Creative",
+      "headlineHighlight": "Portfolio",
+      "subheadline": "Scroll to view our latest AI-generated short-form content designed for maximum engagement.",
+      "prev": "Previous video",
+      "next": "Next video"
+    },
+    "finalCta": {
+      "badge": "Next Steps",
+      "headlinePart1": "Ready to Scale",
+      "headlinePart2": "Your",
+      "headlineHighlight": "Business?",
+      "button": "Book Free Strategy Call"
+    }
+  },
+  "results": {
+    "hero": {
+      "badge": "Proven Performance",
+      "headlinePart1": "Results Backed",
+      "headlinePart2": "by Real Execution",
+      "subheadline": "A snapshot of growth campaigns, lead generation strategies, and real results across industries."
+    },
+    "presence": {
+      "headline": "Our Global",
+      "headlineHighlight": "Footprint",
+      "text": "We work with business owners across Jordan and the Gulf, and expand wherever real growth opportunity exists."
+    },
+    "caseStudies": {
+      "button": "I Want a Result Like This",
+      "case1": {
+        "country": "Jordan",
+        "sector": "Pharmaceutical Distribution",
+        "service": "Social media management + Meta Ads + AI chatbot",
+        "result": "+300% sales growth, +600% message interaction, reached 100% of pharmacies in Jordan, cost per message under $0.09, response time cut by 99% — within one month",
+        "imageAlt": "Jordan Case Study"
+      },
+      "case2": {
+        "country": "Kuwait",
+        "sector": "Natural Herbal Products & Wellness",
+        "service": "Social media management (Facebook, Instagram, Snapchat) + Meta & Snapchat ads",
+        "result": "5x ROAS, +60% total sales, +230% engagement, +180% followers, top-selling products sold out — within the first three months",
+        "imageAlt": "Kuwait Case Study"
+      },
+      "case3": {
+        "country": "UAE",
+        "sector": "Smart Technology & Home Solutions",
+        "service": "Digital marketing strategy + social media management + Meta & Google Ads",
+        "result": "Products sold out in under 10 days, +400% ROI within the first two weeks, hundreds of qualified leads — within weeks",
+        "imageAlt": "UAE Case Study"
+      },
+      "case4": {
+        "country": "USA",
+        "sector": "Automotive Services & Car Protection",
+        "service": "Social media management + Meta & Google Ads + content production",
+        "result": "+300% sales growth, cost per message under $0.70, +200% increase in engagement and inquiries, notable growth in local leads — within two months",
+        "imageAlt": "USA Case Study"
+      }
+    },
+    "clientTrust": {
+      "headline": "Trusted by",
+      "headlineHighlight": "100+ Brands"
+    },
+    "dashboards": {
+      "headline": "Live",
+      "headlineHighlight": "Execution",
+      "headlineEnd": "Dashboards"
+    },
+    "cta": {
+      "badge": "Real Growth",
+      "headlinePart1": "Want Similar",
+      "headlineHighlight": "Results?",
+      "button": "Book Free Strategy Call"
+    }
+  },
+  "about": {
+    "hero": {
+      "badge": "The Blue Mark Philosophy",
+      "headlinePart1": "Built Around Execution,",
+      "headlinePart2": "Not Hype.",
+      "subheadline": "Growth through performance-driven marketing, serious lead generation, real creative execution, and scalable growth strategies."
+    },
+    "video": {
+      "title": "Founder Message"
+    },
+    "pillarsSection": {
+      "headline": "How We Think",
+      "headlineHighlight": "About Growth.",
+      "pillar1": {
+        "title": "Strategy Over Tactics",
+        "desc": "Most businesses struggle because they chase tactics without a cohesive strategy. We build the foundation first."
+      },
+      "pillar2": {
+        "title": "The Execution Gap",
+        "desc": "Ideas are cheap. Execution is everything. Our team is built around operators who know how to ship and scale."
+      },
+      "pillar3": {
+        "title": "Long-Term Partnership",
+        "desc": "We don't want a one-time project. We want to be your growth partner for years to come."
+      }
+    },
+    "team": {
+      "headline": "The Team Behind",
+      "headlineHighlight": "The Numbers",
+      "roles": {
+        "ceo": "Founder and CEO",
+        "marketingManager": "Marketing Manager",
+        "adminAndBizDev": "Administrative Officer and Business Development Manager",
+        "kuwaitProjectManager": "Kuwait Project Manager",
+        "accountManager": "Account Manager",
+        "mediaBuyer": "Media Buyer",
+        "aiContentAndEditor": "AI Content Creator, Video Editor",
+        "seniorDesignerAndEditor": "Senior Graphic Designer & Video Editor",
+        "graphicDesigner": "Graphic Designer",
+        "videoEditor": "Video Editor",
+        "webDeveloper": "Web Developer"
+      }
+    },
+    "culture": {
+      "headline": "Behind",
+      "headlineHighlight": "The Scenes"
+    },
+    "cta": {
+      "headlinePart1": "Let’s Build",
+      "headlineHighlight": "Something That Grows.",
+      "button": "Book Free Strategy Call"
+    }
+  },
+  "book": {
+    "hero": {
+      "badge": "Take Action",
+      "headlinePart1": "Book Your Free",
+      "headlineHighlight": "Growth Strategy Call",
+      "subheadline": "In 30 minutes, we'll audit your current marketing and hand you a clear, actionable growth roadmap.",
+      "ctaAboveFold": "Book Your Call Now"
+    },
+    "whatYouGet": {
+      "headline": "What You'll Get From This Call",
+      "item1": "A deep dive into your sales funnel",
+      "item2": "A detailed review of your current ad spend",
+      "item3": "Identification of the key bottlenecks holding back your growth",
+      "item4": "A clear, actionable roadmap to scale your revenue"
+    },
+    "whatsapp": {
+      "badge": "Fast Track via WhatsApp",
+      "text": "In a hurry? Message us directly on WhatsApp — no need to book a slot.",
+      "button": "Message Us on WhatsApp",
+      "prefilled": "Hello Blue Mark Team, I'm interested in booking a strategy call for my business growth."
+    },
+    "trustIndicators": "Secure & Private • Data-Driven Results • Trusted by Business Owners Across Jordan, the Gulf & Beyond"
+  },
+  "thankYou": {
+    "titlePart1": "Booking",
+    "titlePart2": "Confirmed",
+    "message": "Thank you for scheduling a strategy call with Blue Mark. We've sent a calendar invitation with the meeting details to your email. We look forward to speaking with you!",
+    "backHome": "Back to Homepage"
+  },
+  "aiVideo": {
+    "hero": {
+      "headlinePart1": "Turn Your Idea Into a",
+      "headlineHighlight": "Full Video Ad",
+      "headlinePart2": "Without Filming",
+      "subheadline": "AI-powered video production (Scenes, Characters, Voice-over & Editing). Ready for ads. Built for results.",
+      "startOrder": "Start Your Order",
+      "viewWork": "View Our Work"
+    },
+    "steps": {
+      "headline": "Start Your AI Video in",
+      "headlineHighlight": "60 Seconds",
+      "step1": {
+        "num": "1",
+        "title": "Fill the Form",
+        "desc": "Tell us about your idea and what you need."
+      },
+      "step2": {
+        "num": "2",
+        "title": "We Review",
+        "desc": "Our team analyzes your request and prepares the concept."
+      },
+      "step3": {
+        "num": "3",
+        "title": "We Contact You",
+        "desc": "We reach out on WhatsApp and start your video production."
+      }
+    },
+    "comparison": {
+      "traditional": {
+        "title": "Traditional",
+        "productionLabel": "Production",
+        "productionValue": "3 Weeks",
+        "crewLabel": "Filming Crew",
+        "crewValue": "Required",
+        "costLabel": "Total Cost",
+        "costValue": "$3,000+"
+      },
+      "ai": {
+        "title": "Blue Mark AI",
+        "productionLabel": "Production",
+        "productionValue": "3-5 Days",
+        "crewLabel": "Filming Crew",
+        "crewValue": "Not Needed",
+        "costLabel": "Total Cost",
+        "costValue": "Fraction"
+      }
+    },
+    "packages": {
+      "pkg1": {
+        "title": "1 Video",
+        "desc": "Perfect for testing new offers",
+        "btn": "Select Plan"
+      },
+      "pkg2": {
+        "badge": "BEST SELLER",
+        "title": "3 Videos",
+        "desc": "Our most popular creative bundle",
+        "btn": "Claim Offer"
+      },
+      "pkg3": {
+        "title": "5 Videos",
+        "desc": "Scale your ads across all platforms",
+        "btn": "Select Plan"
+      }
+    },
+    "order": {
+      "headlinePart1": "This is not just a video.",
+      "headlineHighlight": "This is a ready-to-run ad.",
+      "readyTitle": "Ready to scale?",
+      "readyDesc": "Skip the back-and-forth. Book a direct strategy call with our team to map out your new AI video ads.",
+      "btn": "Book Free Consultation"
+    }
+  },
+  "websiteSolutions": {
+    "hero": {
+      "badge": "Website Solutions",
+      "headlinePart1": "Stop Building Websites.",
+      "headlineHighlight": "Start Building Smart Assets.",
+      "subheadline": "High-performance, intelligent websites designed to work for you 24/7.",
+      "seeWork": "See Our Smart Work",
+      "bookConsultation": "Book Free Consultation"
+    },
+    "difference": {
+      "badge": "The Smart Difference",
+      "headlinePart1": "Traditional Website",
+      "headlineVs": "vs",
+      "headlinePart2": "Smart Site",
+      "subheadline": "A simple side-by-side comparison that explains the value in seconds.",
+      "colFeature": "Feature",
+      "colTraditional": "Traditional",
+      "colBlueMark": "Blue Mark",
+      "rows": {
+        "speed": {
+          "label": "Speed",
+          "old": "Slow loading",
+          "new": "Blazing Fast (<2s)"
+        },
+        "leads": {
+          "label": "Leads",
+          "old": "Manual follow-up",
+          "new": "Auto CRM Sync"
+        },
+        "design": {
+          "label": "Design",
+          "old": "Basic templates",
+          "new": "Conversion-First UI"
+        },
+        "seo": {
+          "label": "SEO",
+          "old": "Hidden in Google",
+          "new": "Google-Ready"
+        },
+        "security": {
+          "label": "Security",
+          "old": "Vulnerable",
+          "new": "Bank-Grade Security"
+        }
+      }
+    },
+    "features": {
+      "badge": "Smart Features",
+      "headlinePart1": "Built for",
+      "headlineHighlight": "Performance,",
+      "headlinePart2": "Leads, and Growth",
+      "items": {
+        "autoSync": {
+          "title": "Auto-Sync",
+          "desc": "Leads go straight to your phone or CRM automatically."
+        },
+        "mobileFirst": {
+          "title": "Mobile-First",
+          "desc": "Perfect experience on every screen and device."
+        },
+        "dataDriven": {
+          "title": "Data-Driven",
+          "desc": "Built around real user behavior, not just visuals."
+        },
+        "scalable": {
+          "title": "Scalable",
+          "desc": "Your system grows as your business grows."
+        },
+        "fastLoading": {
+          "title": "Fast Loading",
+          "desc": "Optimized for speed to reduce drop-off and keep users engaged."
+        },
+        "conversionFirst": {
+          "title": "Conversion-First",
+          "desc": "Every layout block is designed to guide visitors toward action."
+        },
+        "crmReady": {
+          "title": "CRM Ready",
+          "desc": "Connect your website with your workflow for smarter handling."
+        },
+        "seoOptimized": {
+          "title": "SEO Optimized",
+          "desc": "Built with structure and performance search engines love."
+        }
+      }
+    },
+    "portfolio": {
+      "badge": "Smart Work",
+      "headlinePart1": "Websites Built for Growth,",
+      "headlineHighlight": "Not Just Looks",
+      "watchCaseStudy": "Watch Case Study",
+      "categories": {
+        "corporate": "Corporate & Consulting",
+        "medical": "Medical & Wellness",
+        "ecommerce": "E-commerce & Retail"
+      }
+    },
+    "process": {
+      "badge": "Simple Process",
+      "headlinePart1": "Get started in",
+      "headlineHighlight": "3 simple steps",
+      "steps": {
+        "step1": {
+          "no": "1",
+          "title": "Fill the Form",
+          "desc": "Tell us your business and project needs."
+        },
+        "step2": {
+          "no": "2",
+          "title": "We Review",
+          "desc": "We review your case and recommend the best smart solution."
+        },
+        "step3": {
+          "no": "3",
+          "title": "We Contact You",
+          "desc": "We reach out quickly and move you toward launch."
+        }
+      },
+      "cta": {
+        "title": "Ready to scale?",
+        "desc": "Skip the back-and-forth. Book a direct strategy call with our team to map out your new smart asset.",
+        "btn": "Book Free Consultation"
+      }
+    },
+    "finalCta": {
+      "headlinePart1": "This is not just a website.",
+      "headlineHighlight": "This is a ready-to-grow asset."
+    }
+  }
+}

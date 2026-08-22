@@ -1,15 +1,15 @@
 'use client';
 
 import { motion } from 'framer-motion';
-
-const stats = [
-  { label: '$2M+ Ad Spend Managed', value: '2M' },
-  { label: '10,000+ Leads Generated', value: '10K' },
-  { label: '9X ROAS Campaigns', value: '9X' },
-  { label: 'Multi-Market Experience', value: '15+' },
-];
+import { useTranslations, useLocale } from 'next-intl';
+import { statsConfig } from '@/data/stats';
 
 const ResultsPreview = () => {
+  const t = useTranslations('home.achievements');
+  const locale = useLocale();
+
+  const achievements = statsConfig.achievements.filter(s => s.verified);
+
   return (
     <section className="py-2 bg-dark-navy relative overflow-hidden">
       <div className="container px-4 md:px-6">
@@ -21,28 +21,39 @@ const ResultsPreview = () => {
               viewport={{ once: true }}
               className="text-[2.2rem] sm:text-5xl md:text-7xl font-black text-white mb-10 md:mb-12 tracking-tighter uppercase leading-[1.1]"
             >
-              Real Work. <br /> <span className="text-blue">Real Growth.</span>
+              {t('headline')} <br /> <span className="text-blue">{t('headlineHighlight')}</span>
             </motion.h2>
 
-            <div className="grid grid-cols-1 sm:grid-cols-2 gap-4 md:gap-6">
-              {stats.map((stat, index) => (
-                <motion.div
-                  key={index}
-                  initial={{ opacity: 0, scale: 0.9 }}
-                  whileInView={{ opacity: 1, scale: 1 }}
-                  viewport={{ once: true }}
-                  transition={{ delay: index * 0.1 }}
-                  className="glow-card p-6 md:p-8 rounded-2xl flex flex-col items-center sm:items-start"
-                >
-                  <div className="text-4xl md:text-5xl font-black text-blue mb-1">{stat.value}</div>
-                  <div className="text-[10px] md:text-xs font-bold text-gray-400 uppercase tracking-widest text-center sm:text-left">{stat.label}</div>
-                </motion.div>
-              ))}
-            </div>
+            {achievements.length > 0 && (
+              <div className="grid grid-cols-1 sm:grid-cols-2 gap-4 md:gap-6">
+                {achievements.map((stat, index) => {
+                  const val = locale === 'ar' ? stat.valueAr : stat.valueEn;
+                  const label = t(`${stat.id}.label`);
+
+                  return (
+                    <motion.div
+                      key={stat.id}
+                      initial={{ opacity: 0, scale: 0.9 }}
+                      whileInView={{ opacity: 1, scale: 1 }}
+                      viewport={{ once: true }}
+                      transition={{ delay: index * 0.1 }}
+                      className="glow-card p-6 md:p-8 rounded-2xl flex flex-col items-center sm:items-start"
+                    >
+                      <div className="text-4xl md:text-5xl font-black text-blue mb-1">
+                        <bdi>{val}</bdi>
+                      </div>
+                      <div className="text-[10px] md:text-xs font-bold text-gray-400 uppercase tracking-widest text-center sm:text-start">
+                        {label}
+                      </div>
+                    </motion.div>
+                  );
+                })}
+              </div>
+            )}
           </div>
 
           <div className="lg:w-1/2 w-full relative flex justify-center mt-12 lg:mt-0">
-             <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[300px] h-[300px] bg-blue/20 rounded-full blur-[80px]" />
+             <div className="absolute top-1/2 start-1/2 -translate-x-1/2 -translate-y-1/2 w-[300px] h-[300px] bg-blue/20 rounded-full blur-[80px]" />
              <motion.div
                initial={{ opacity: 0, scale: 0.8 }}
                whileInView={{ opacity: 1, scale: 1 }}

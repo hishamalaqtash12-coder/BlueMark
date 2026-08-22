@@ -1,8 +1,18 @@
 'use client';
 
 import { motion } from 'framer-motion';
+import { useTranslations } from 'next-intl';
 
 const TeamAuthority = () => {
+  const t = useTranslations('home.aboutBlurb');
+
+  const pillars = [
+    t('pillars.strategy'),
+    t('pillars.execution'),
+    t('pillars.optimization'),
+    t('pillars.directComm'),
+  ];
+
   return (
     <section className="py-2 bg-dark-navy overflow-hidden">
       <div className="container px-6">
@@ -14,14 +24,14 @@ const TeamAuthority = () => {
               viewport={{ once: true }}
               className="text-4xl md:text-7xl font-black text-white mb-8 tracking-tighter uppercase leading-tight"
             >
-              Built by a Team <br /> <span className="text-blue">Focused on Results</span>
+              {t('headline')} <br /> <span className="text-blue">{t('headlineHighlight')}</span>
             </motion.h2>
             <p className="text-base md:text-lg text-gray-400 mb-10 leading-relaxed max-w-xl font-medium">
-              Blue Mark works with businesses across the USA, GCC, and Jordan to build scalable growth strategies focused on measurable business results.
+              {t('text')}
             </p>
             
             <div className="space-y-6 mb-12 lg:mb-0">
-              {['Strategy First Approach', 'Creative Execution', 'Data-Driven Optimization', 'Direct Founder Communication'].map((item, i) => (
+              {pillars.map((item, i) => (
                 <motion.div 
                   key={i}
                   initial={{ opacity: 0, x: 20 }}
