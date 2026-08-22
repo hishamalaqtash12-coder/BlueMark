@@ -1,7 +1,6 @@
 'use client';
 
 import { useLocale } from 'next-intl';
-import { usePathname, useRouter } from '@/i18n/routing';
 import { Globe } from 'lucide-react';
 
 interface LanguageSwitcherProps {
@@ -18,8 +17,6 @@ export default function LanguageSwitcher({
   onSelect 
 }: LanguageSwitcherProps) {
   const locale = useLocale();
-  const pathname = usePathname();
-  const router = useRouter();
 
   const toggleLanguage = (targetLocale: 'ar' | 'en') => {
     if (targetLocale === locale) return;
@@ -27,8 +24,29 @@ export default function LanguageSwitcher({
     // Set cookie for 1 year persistence
     document.cookie = `NEXT_LOCALE=${targetLocale}; path=/; max-age=31536000; SameSite=Lax`;
     
-    router.replace(pathname, { locale: targetLocale });
-    if (onSelect) onSelect();
+    if (typeof window !== 'undefined') {
+      const currentPath = window.location.pathname;
+      let targetPath = '/';
+
+      if (targetLocale === 'en') {
+        // Switch to English
+        if (!currentPath.startsWith('/en')) {
+          targetPath = currentPath === '/' ? '/en' : `/en${currentPath}`;
+        } else {
+          targetPath = currentPath;
+        }
+      } else {
+        // Switch to Arabic (default at root)
+        if (currentPath.startsWith('/en')) {
+          targetPath = currentPath.replace(/^\/en(\/|$)/, '$1') || '/';
+        } else {
+          targetPath = currentPath;
+        }
+      }
+
+      if (onSelect) onSelect();
+      window.location.href = targetPath;
+    }
   };
 
   // Full-width menu version (inside mobile menu drawer)
@@ -38,7 +56,7 @@ export default function LanguageSwitcher({
         <button
           type="button"
           onClick={() => toggleLanguage('ar')}
-          className={`px-6 py-2.5 rounded-full text-sm font-bold transition-all ${
+          className={`px-6 py-2.5 rounded-full text-sm font-bold transition-all cursor-pointer ${
             locale === 'ar' 
               ? 'bg-blue text-white shadow-[0_0_15px_rgba(0,158,219,0.5)]' 
               : 'text-gray-400 hover:text-white'
@@ -49,7 +67,7 @@ export default function LanguageSwitcher({
         <button
           type="button"
           onClick={() => toggleLanguage('en')}
-          className={`px-6 py-2.5 rounded-full text-sm font-bold transition-all ${
+          className={`px-6 py-2.5 rounded-full text-sm font-bold transition-all cursor-pointer ${
             locale === 'en' 
               ? 'bg-blue text-white shadow-[0_0_15px_rgba(0,158,219,0.5)]' 
               : 'text-gray-400 hover:text-white'
@@ -70,7 +88,7 @@ export default function LanguageSwitcher({
       <button
         type="button"
         onClick={() => toggleLanguage(nextLocale)}
-        className={`inline-flex items-center gap-1.5 bg-white/[0.06] hover:bg-white/[0.1] border border-white/10 active:scale-95 px-3 py-1.5 rounded-full text-xs font-black text-white transition-all shrink-0 ${className}`}
+        className={`inline-flex items-center gap-1.5 bg-white/[0.06] hover:bg-white/[0.1] border border-white/10 active:scale-95 px-3 py-1.5 rounded-full text-xs font-black text-white transition-all shrink-0 cursor-pointer ${className}`}
         aria-label={locale === 'ar' ? 'Switch to English' : 'التبديل إلى العربية'}
       >
         <Globe className="w-3.5 h-3.5 text-blue shrink-0" />
@@ -86,7 +104,7 @@ export default function LanguageSwitcher({
       <button
         type="button"
         onClick={() => toggleLanguage('ar')}
-        className={`px-3 py-1 rounded-full text-[10px] font-black transition-all ${
+        className={`px-3 py-1 rounded-full text-[10px] font-black transition-all cursor-pointer ${
           locale === 'ar'
             ? 'bg-blue text-white shadow-[0_0_10px_rgba(0,158,219,0.4)]'
             : 'text-gray-400 hover:text-white'
@@ -98,7 +116,7 @@ export default function LanguageSwitcher({
       <button
         type="button"
         onClick={() => toggleLanguage('en')}
-        className={`px-3 py-1 rounded-full text-[10px] font-black transition-all ${
+        className={`px-3 py-1 rounded-full text-[10px] font-black transition-all cursor-pointer ${
           locale === 'en'
             ? 'bg-blue text-white shadow-[0_0_10px_rgba(0,158,219,0.4)]'
             : 'text-gray-400 hover:text-white'
