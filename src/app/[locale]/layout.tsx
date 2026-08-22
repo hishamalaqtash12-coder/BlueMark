@@ -91,10 +91,12 @@ export default async function LocaleLayout({
       dir={isRtl ? 'rtl' : 'ltr'} 
       className={`scroll-smooth ${fontSans.variable} ${fontHeading.variable} ${fontArabic.variable}`}
     >
-      <head>
-        <script
-          dangerouslySetInnerHTML={{
-            __html: `
+      <body
+        className={`antialiased bg-[#000814] text-white min-h-screen ${isRtl ? 'font-arabic' : 'font-sans'}`}
+      >
+        <NextIntlClientProvider messages={messages}>
+          <Script id="meta-pixel" strategy="afterInteractive">
+            {`
               !function(f,b,e,v,n,t,s)
               {if(f.fbq)return;n=f.fbq=function(){n.callMethod?
               n.callMethod.apply(n,arguments):n.queue.push(arguments)};
@@ -105,14 +107,8 @@ export default async function LocaleLayout({
               'https://connect.facebook.net/en_US/fbevents.js');
               fbq('init', '1075501568771068'); 
               fbq('track', 'PageView');
-            `,
-          }}
-        />
-      </head>
-      <body
-        className={`antialiased bg-[#000814] text-white min-h-screen ${isRtl ? 'font-arabic' : 'font-sans'}`}
-      >
-        <NextIntlClientProvider messages={messages}>
+            `}
+          </Script>
           <Script
             src="https://www.googletagmanager.com/gtag/js?id=G-3YBJ022RFT"
             strategy="afterInteractive"
