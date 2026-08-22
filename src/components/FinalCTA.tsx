@@ -21,7 +21,7 @@ const FinalCTA = ({
   const defaultBtn = buttonText || tCommon('bookFreeCall');
 
   return (
-    <section className="py-2 bg-dark-navy relative overflow-hidden text-center">
+    <section className="py-28 md:py-36 bg-dark-navy relative overflow-hidden text-center">
       {/* Background Glows */}
       <div className="absolute top-0 start-1/4 w-[300px] md:w-[500px] h-[300px] md:h-[500px] bg-blue/10 rounded-full blur-[100px] md:blur-[120px]" />
       <div className="absolute bottom-0 end-1/4 w-[300px] md:w-[500px] h-[300px] md:h-[500px] bg-blue/10 rounded-full blur-[100px] md:blur-[120px]" />

@@ -14,7 +14,7 @@ const TeamAuthority = () => {
   ];
 
   return (
-    <section className="py-2 bg-dark-navy overflow-hidden">
+    <section className="py-24 md:py-32 bg-dark-navy overflow-hidden">
       <div className="container px-6">
         <div className="flex flex-col lg:flex-row-reverse gap-12 lg:gap-20 items-center">
           <div className="lg:w-1/2">

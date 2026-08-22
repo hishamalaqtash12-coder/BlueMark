@@ -34,7 +34,7 @@ const CreativePortfolio = () => {
   };
 
   return (
-    <section className="py-2 bg-dark-navy overflow-hidden">
+    <section className="py-24 md:py-32 bg-dark-navy overflow-hidden">
       <div className="container px-6">
         <div className="flex flex-col md:flex-row justify-between items-end mb-16 md:mb-20 gap-6">
           <div className="text-start">
