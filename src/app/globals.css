@@ -7,7 +7,7 @@
   
   --font-sans: var(--font-sans), 'Inter', sans-serif;
   --font-heading: var(--font-heading), 'Plus Jakarta Sans', sans-serif;
-  --font-arabic: var(--font-arabic), 'IBM Plex Sans Arabic', sans-serif;
+  --font-arabic: var(--font-arabic), 'Cairo', sans-serif;
 
   --animate-float: float 6s ease-in-out infinite;
   --animate-scroll: scroll 30s linear infinite;
@@ -43,16 +43,16 @@ body {
 
 /* Typography for Arabic (RTL) */
 [dir="rtl"], [lang="ar"] {
-  font-family: var(--font-arabic), 'IBM Plex Sans Arabic', sans-serif !important;
+  font-family: var(--font-arabic), 'Cairo', sans-serif !important;
   letter-spacing: normal !important;
 }
 
 [dir="rtl"] h1, [dir="rtl"] h2, [dir="rtl"] h3, [dir="rtl"] h4, [dir="rtl"] h5, [dir="rtl"] h6,
 [lang="ar"] h1, [lang="ar"] h2, [lang="ar"] h3, [lang="ar"] h4, [lang="ar"] h5, [lang="ar"] h6 {
-  font-family: var(--font-arabic), 'IBM Plex Sans Arabic', sans-serif !important;
+  font-family: var(--font-arabic), 'Cairo', sans-serif !important;
   letter-spacing: normal !important;
   text-transform: none !important;
-  line-height: 1.15;
+  line-height: 1.25;
 }
 
 [dir="rtl"] p, [dir="rtl"] span, [dir="rtl"] a, [dir="rtl"] button, [dir="rtl"] div,

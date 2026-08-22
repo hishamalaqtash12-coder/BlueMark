@@ -1,5 +1,5 @@
 import type { Metadata } from "next";
-import { Inter, Plus_Jakarta_Sans, IBM_Plex_Sans_Arabic } from "next/font/google";
+import { Inter, Plus_Jakarta_Sans, Cairo } from "next/font/google";
 import { Suspense } from "react";
 import Script from "next/script";
 import { notFound } from "next/navigation";
@@ -23,9 +23,9 @@ const fontHeading = Plus_Jakarta_Sans({
   display: "swap",
 });
 
-const fontArabic = IBM_Plex_Sans_Arabic({
+const fontArabic = Cairo({
   subsets: ["arabic", "latin"],
-  weight: ["300", "400", "500", "600", "700"],
+  weight: ["300", "400", "500", "600", "700", "800", "900"],
   variable: "--font-arabic",
   display: "swap",
 });
