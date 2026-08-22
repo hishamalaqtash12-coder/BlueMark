@@ -41,23 +41,30 @@ body {
   -moz-osx-font-smoothing: grayscale;
 }
 
-/* Typography for Arabic (RTL) */
-[dir="rtl"], [lang="ar"] {
+/* Typography for Arabic (RTL) - Apply Cairo to all elements */
+html[dir="rtl"],
+html[lang="ar"],
+[dir="rtl"],
+[lang="ar"],
+[dir="rtl"] *,
+[lang="ar"] * {
   font-family: var(--font-arabic), 'Cairo', sans-serif !important;
-  letter-spacing: normal !important;
+  letter-spacing: 0 !important;
 }
 
 [dir="rtl"] h1, [dir="rtl"] h2, [dir="rtl"] h3, [dir="rtl"] h4, [dir="rtl"] h5, [dir="rtl"] h6,
 [lang="ar"] h1, [lang="ar"] h2, [lang="ar"] h3, [lang="ar"] h4, [lang="ar"] h5, [lang="ar"] h6 {
   font-family: var(--font-arabic), 'Cairo', sans-serif !important;
-  letter-spacing: normal !important;
+  letter-spacing: 0 !important;
   text-transform: none !important;
   line-height: 1.25;
 }
 
-[dir="rtl"] p, [dir="rtl"] span, [dir="rtl"] a, [dir="rtl"] button, [dir="rtl"] div,
-[lang="ar"] p, [lang="ar"] span, [lang="ar"] a, [lang="ar"] button, [lang="ar"] div {
+[dir="rtl"] p, [dir="rtl"] span, [dir="rtl"] a, [dir="rtl"] button, [dir="rtl"] div, [dir="rtl"] input, [dir="rtl"] textarea, [dir="rtl"] select,
+[lang="ar"] p, [lang="ar"] span, [lang="ar"] a, [lang="ar"] button, [lang="ar"] div, [lang="ar"] input, [lang="ar"] textarea, [lang="ar"] select {
+  font-family: var(--font-arabic), 'Cairo', sans-serif !important;
   letter-spacing: 0 !important;
+  text-transform: none !important;
 }
 
 [dir="rtl"] .tracking-tighter, [dir="rtl"] .tracking-tight, [dir="rtl"] .tracking-widest, [dir="rtl"] .tracking-wide,
