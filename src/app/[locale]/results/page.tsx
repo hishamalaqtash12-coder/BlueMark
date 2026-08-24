@@ -124,6 +124,8 @@ const ResultsPage = () => {
                  { name: 'KSA', code: 'sa' },
                  { name: 'UAE', code: 'ae' },
                  { name: 'Kuwait', code: 'kw' },
+                 { name: 'Egypt', code: 'eg' },
+                 { name: 'Bahrain', code: 'bh' },
                  { name: 'USA', code: 'us' },
                  { name: 'Oman', code: 'om' },
                  { name: 'Morocco', code: 'ma' },
