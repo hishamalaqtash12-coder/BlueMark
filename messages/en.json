@@ -336,6 +336,12 @@
       "button": "Message Us on WhatsApp",
       "prefilled": "Hello Blue Mark Team, I'm interested in booking a strategy call for my business growth."
     },
+    "call": {
+      "badge": "Prefer to Talk?",
+      "text": "Call us directly and speak with the team right away.",
+      "button": "Call Us Now",
+      "number": "+962 79 045 3482"
+    },
     "trustIndicators": "Secure & Private • Data-Driven Results • Trusted by Business Owners Across Jordan, the Gulf & Beyond"
   },
   "thankYou": {

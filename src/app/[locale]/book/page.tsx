@@ -1,7 +1,7 @@
 'use client';
 
 import { motion } from 'framer-motion';
-import { MessageCircle } from 'lucide-react';
+import { MessageCircle, Phone } from 'lucide-react';
 import { useEffect, useRef, useState } from 'react';
 import { useRouter } from '@/i18n/routing';
 import { useTranslations } from 'next-intl';
@@ -46,9 +46,12 @@ const BookingPage = () => {
     };
   }, [isScriptLoaded, router]);
 
+  const PHONE_NUMBER = '962790453482';
+
   const handleWhatsApp = () => {
     const message = encodeURIComponent(t('whatsapp.prefilled'));
-    window.open(`https://wa.me/962790453482?text=${message}`, '_blank');
+    fpixel.event('Contact');
+    window.open(`https://wa.me/${PHONE_NUMBER}?text=${message}`, '_blank');
   };
 
   const whatYouGetItems = [
@@ -123,8 +126,34 @@ const BookingPage = () => {
                 onClick={handleWhatsApp}
                 className="w-full bg-blue hover:bg-white hover:text-navy text-white py-6 rounded-full font-black uppercase tracking-widest transition-all shadow-[0_0_30px_rgba(0,158,219,0.4)] flex items-center justify-center gap-3"
               >
-                {t('whatsapp.button')}
+                <MessageCircle className="w-5 h-5 shrink-0" />
+                <span>{t('whatsapp.button')}</span>
               </button>
+
+              <div className="flex items-center gap-4 my-6">
+                <div className="h-px flex-1 bg-white/10" />
+                <span className="text-[10px] font-black uppercase tracking-[0.3em] text-gray-500">
+                  {t('call.badge')}
+                </span>
+                <div className="h-px flex-1 bg-white/10" />
+              </div>
+
+              <p className="text-gray-400 text-sm font-medium leading-relaxed mb-6">
+                {t('call.text')}
+              </p>
+
+              <a
+                href={`tel:+${PHONE_NUMBER}`}
+                onClick={() => fpixel.event('Contact')}
+                className="w-full bg-transparent border-2 border-blue/40 hover:bg-white hover:text-navy hover:border-white text-white py-6 rounded-full font-black uppercase tracking-widest transition-all flex items-center justify-center gap-3"
+              >
+                <Phone className="w-5 h-5 shrink-0" />
+                <span>{t('call.button')}</span>
+              </a>
+
+              <div className="mt-4 text-center text-xs font-bold tracking-widest text-gray-500">
+                <bdi dir="ltr">{t('call.number')}</bdi>
+              </div>
             </div>
 
             <div className="glow-card p-10 rounded-[2.5rem] text-start bg-white/[0.01]">
